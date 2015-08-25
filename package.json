@@ -1,0 +1,22 @@
+{
+  "name": "data-talk",
+  "version": "1.0.0",
+  "description": "Talk for reasons.to",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benfoxall/data-talk.git"
+  },
+  "author": "Ben Foxall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benfoxall/data-talk/issues"
+  },
+  "homepage": "https://github.com/benfoxall/data-talk#readme",
+  "dependencies": {
+    "node-static": "^0.7.7"
+  }
+}
