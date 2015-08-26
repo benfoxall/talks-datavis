@@ -114,6 +114,39 @@
                * Pulsars?
             </aside>
           </section>
+
+          <section data-background="images/pulsars-data.png" data-background-size="cover">
+            <aside class="notes">
+              PSR B1919+21
+           </aside>
+          </section>
+
+          <section data-background="images/pulsars.png" data-background-size="contain">
+            <aside class="notes">
+              PSR B1919+21
+
+              Jocelyn Bell Burnell and Antony Hewish
+           </aside>
+          </section>
+
+          <section>
+            <h2>Preattentive attributes</h2>
+            <aside class="notes">
+              **Before** you've started engaging with it
+            </aside>
+          </section>
+
+          <section>
+            <h2>how many 9s</h2>
+          </section>
+
+          <section>
+            <h2>[image flicker]</h2>
+            <aside class="notes">
+              We're trying to utilise these effects to help people understand data
+            </aside>
+          </section>
+
         </section>
 
         <section>
@@ -122,14 +155,45 @@
 
             <aside class="notes">
               You're focused on making that thing as clear as possible
+            </aside>
+          </section>
+
+          <section data-background="images/minard.svg" data-background-size="contain">
+            <aside class="notes">
+              Minard
+            </aside>
+          </section>
+
+          <section>
+            $\text{data-ink ratio}=\frac{\text{``ink'' used to display the data}}{\text{total ``ink'' used to display the graphic}}$
+
+            <p><br /></p>
+
+            $\text{data density}=\frac{\text{number of entries in data matrix}}{\text{area of data graphic}}$
+            <aside class="notes">
+              You're focused on making that thing as clear as possible
                * Minard?
             </aside>
           </section>
+
+          <section data-background="images/meta-xkcd.png" data-background-size="contain">
+          </section>
+
         </section>
 
         <section>
           <section>
             <h1>for Something</h1>
+
+            <aside class="notes">
+              Where it's about the graph itself
+               * Making something pretty for the sake of it
+               * Infographics
+            </aside>
+          </section>
+
+          <section data-background="images/infographics.png" data-background-size="cover">
+
 
             <aside class="notes">
               Where it's about the graph itself
@@ -154,9 +218,6 @@
 
 
 
-
-
-
         <section>
           <section>
             <h1>My data</h1>
@@ -167,14 +228,55 @@
           </section>
 
           <section  data-transition="none">
-            <h2>My stuff, My other stuff &amp; Me</h2>
+            <h2>My stuff, My thing &amp; Me</h2>
           </section>
 
           <section  data-transition="none">
-            <h2>My stuff, My other stuff, Me &amp; Other people</h2>
+            <h2>My stuff, My thing, Me &amp; Other people</h2>
+
+            <article class="notes">
+              This is a crap visualisation
+            </article>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h1>An Example</h1>
+          </section>
+
+          <section>
+            <img src="images/runkeeper.png" />
+          </section>
+
+          <section>
+            <h2>Stuff - Runkeeper data</h2>
+            <h2>Something - Chart</h2>
+            <h2>Someone - Me</h2>
+          </section>
+
+          <section>
+            <pre><code>
+    fetch('mydata.csv') // stuff
+      .then(renderChart) // something
+
+</code></pre>
           </section>
 
         </section>
+
+        <section>
+          <section>
+            <h1>mydata.csv</h1>
+          </section>
+
+          <section>
+            <img src="images/manual-1.png" />
+          </section>
+
+        </section>
+
 
 
 
@@ -202,8 +304,15 @@
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true }
-        ]
+          { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
+          { src: 'bower_components/reveal.js/plugin/math/math.js', async: true }
+        ],
+
+        // // if I've bothered to install it locally
+        // // bower install mathjax
+        // math: {
+        //    mathjax: 'bower_components/MathJax/MathJax.js'
+        // }
       });
 
     </script>
