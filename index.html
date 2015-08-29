@@ -268,7 +268,7 @@
 
         <section>
           <section>
-            <h1>mydata.csv</h1>
+            <h1>Getting mydata.csv</h1>
           </section>
 
           <section>
@@ -299,13 +299,13 @@
           <section>
             <h3>+ openness</h3>
             <h3>- waiting</h3>
+            <h3>- RTT (&rarr; server, &rarr; client)</h3>
             <h3>- data storage/privacy</h3>
           </section>
 
           <section>
             <h2>[3. proxy web service, client storage]
           </section>
-
 
           <section>
             <h3>[website screenshot]</h3>
@@ -330,7 +330,6 @@
             </pre></code>
           </section>
 
-
           <section>
             <h3>[process]</h3>
             <code><pre>
@@ -343,37 +342,120 @@
             </pre></code>
           </section>
 
-
-
           <section>
             <h3>[serve]</h3>
             <code><pre>
               .on('fetch', function(e){
-
                 e.respondWith(
-                  process().
-                    then(function(csvStr){
-                      return new Response(csvStr, {
-                        headers: { 'Content-Type': 'text/csv' }
-                      })
+                  process()
+                  .then(function(csvStr){
+                    return new Response(csvStr, {
+                      headers: { 'Content-Type': 'text/csv' }
                     })
+                  })
                 )
-
               })
             </pre></code>
           </section>
 
-
-
-
-
-
-
-
-
+          <section>
+            <h3>+ openness</h3>
+            <h3>+ waiting</h3>
+            <h3>+ async</h3>
+            <h3>+ data storage/privacy</h3>
+            <h3>++ my-data.csv?groupBy=month <!-- no additional request overhead + no server changes --></h3>
+          </section>
 
         </section>
 
+
+        <section>
+          <section>
+            <h1>Visualising data</h1>
+          </section>
+
+          <section>
+            <code><pre>
+              fetch('summary.json')
+                .then(function(res){return res.json()})
+                .then(function(summary){
+                  document.getElementById('distance').innerText = summary.distance
+                })
+            </pre></code>
+          </section>
+
+          <section>
+            <h1>56whatever <span class="fragment">km<span></h1>
+          </section>
+
+          <section>
+            <h2>[circumference of earth]</h2>
+
+            <!--  don’t think anyone knows how big the world is.
+
+              Or, I don’t see how anyone can understand how big it is.
+              I can understand how far away I am from the fridge, or
+              how far it is to the nearest shop; but I haven’t a clue
+              about how big the world is.
+
+              Other than “really big” perhaps. -->
+          </section>
+
+          <section>
+            <h1>[UK length]</h1>
+
+            <!-- I really like turning the map on its side, ireland is like
+              the mild weathered island off the coast -->
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Digging deeper</h1>
+          </section>
+
+          <section>
+            <h1>[distance vs time]</h1>
+            <h2 class="fragment">activity plots</h2>
+            <h2 class="fragment">final paths</h2>
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Geo data</h1>
+          </section>
+
+          <section>
+            <h2>Lat, Lon, Alt</h2>
+            <h3>[110k points]</h3>
+          </section>
+
+          <section>
+            <h1>[canvas]</h1>
+            <h2 class="fragment">[redraw-uk]</h2>
+            <h2 class="fragment">[redraw-oxford]</h2>
+          </section>
+
+          <section>
+            <p>[normal], [Equirectangular]</p>
+            <aside class="notes">
+              So, this is how we map UK, and this is what we've drawn.
+
+              This is **all cool**, we've played with the data - we've created something
+            </aside>
+          </section>
+
+          <section>
+            <h1>d3.geo</h1>
+          </section>
+
+
+        </section>
 
 
 
