@@ -272,8 +272,105 @@
           </section>
 
           <section>
-            <img src="images/manual-1.png" />
+            <h2>[1. script]</h2>
           </section>
+
+          <section>
+            <h2>[bash listing fetch]</h2>
+          </section>
+
+          <section>
+            <h2>[bash listing process]</h2>
+          </section>
+
+          <section>
+            <h2>+ format choice</h2>
+            <h2>- sharing</h2>
+          </section>
+
+          <section>
+            <h3>[2. web service]
+          </section>
+
+          <section>
+            <h3>[website screenshot]</h3>
+          </section>
+
+          <section>
+            <h3>+ openness</h3>
+            <h3>- waiting</h3>
+            <h3>- data storage/privacy</h3>
+          </section>
+
+          <section>
+            <h2>[3. proxy web service, client storage]
+          </section>
+
+
+          <section>
+            <h3>[website screenshot]</h3>
+          </section>
+
+          <section>
+            <h3>[website screenshot /data/url.json]</h3>
+            <aside class="notes">
+              instead of collecting all the data server side, we can provide a proxy
+              for the user to access their own data once they've logged in.
+            </aside>
+          </section>
+
+          <section>
+            <h3>[collection]</h3>
+            <code><pre>
+              fetch('data/fitnessActivity/xyz')
+                .then(function(d){ return d.json() })
+                .then(function(data){
+                  db.responses.add('data/fitnessActivity/xyz', data)
+                })
+            </pre></code>
+          </section>
+
+
+          <section>
+            <h3>[process]</h3>
+            <code><pre>
+              var csvStr = '';
+              db
+                .responses
+                .each(function(item){
+                  csvStr += toCSV(item);
+                })
+            </pre></code>
+          </section>
+
+
+
+          <section>
+            <h3>[serve]</h3>
+            <code><pre>
+              .on('fetch', function(e){
+
+                e.respondWith(
+                  process().
+                    then(function(csvStr){
+                      return new Response(csvStr, {
+                        headers: { 'Content-Type': 'text/csv' }
+                      })
+                    })
+                )
+
+              })
+            </pre></code>
+          </section>
+
+
+
+
+
+
+
+
+
 
         </section>
 
