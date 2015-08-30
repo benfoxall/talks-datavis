@@ -7,7 +7,23 @@
   <body>
     <h1><a href="slides.html">Slides</a></h1>
 
-    <!--h1><a href="sources/rk">Runkeeper data</a></h1-->
+    <h1><a href="sources/runkeeper/">Runkeeper data</a></h1>
+
+    <div id="sw-state"></div>
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        var htm = document.getElementById('sw-state');
+        htm.innerText = 'sw-registering';
+
+        navigator.serviceWorker.register('sw.runkeeper.js', {
+          // scope: 'sources/runkeeper/'
+        }).then(function(registration) {
+          htm.innerText = 'sw-registered';
+        }).catch(function(err) {
+          htm.innerText = 'sw-failed';
+        });
+      }
+    </script>
 
   </body>
 </html>
