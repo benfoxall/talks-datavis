@@ -35,7 +35,7 @@ var q = async.queue(function (uri, callback) {
             downloaded.push(uri);
           })
           .then(function(){
-            fetch('/sw/expire-cache');
+            fetch('sw/expire-cache');
           })
     })
     .then(update)
@@ -89,7 +89,7 @@ self.addEventListener('message', function(event) {
       q.kill();
       db.activities.clear()
       .then(function(){
-        fetch('/sw/expire-cache');
+        fetch('sw/expire-cache');
         console.log("CLEARED")
       })
   }
@@ -102,7 +102,7 @@ self.addEventListener('message', function(event) {
 function index(url) {
   if(!url) return
 
-  return fetch('/data' + url, { credentials: 'include' })
+  return fetch('data' + url, { credentials: 'include' })
     .then(function(res){
       return res.json();
     })

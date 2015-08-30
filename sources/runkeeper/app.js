@@ -67,7 +67,6 @@ app.use(session(opts));
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
 
@@ -132,4 +131,7 @@ app.get('/data/fitnessActivities/:id', function(req, res){
 
 app.use(express.static(__dirname + '/views'));
 
-app.listen(process.env.PORT || 3000);
+module.exports = app;
+
+if(require.main === module)
+   app.listen(process.env.PORT || 3000)

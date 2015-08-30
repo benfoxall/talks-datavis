@@ -45,7 +45,7 @@
       if ('serviceWorker' in navigator) {
         htm.className = 'sw-registering';
 
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
           htm.className = 'sw-registered';
         }).catch(function(err) {
           htm.className = 'sw-failed';
@@ -67,7 +67,7 @@
 
       {{^user}}
         <p>
-          <a href="/auth/runkeeper" class="btn btn-primary">sign in with runkeeper</a>
+          <a href="auth/runkeeper" class="btn btn-primary">sign in with runkeeper</a>
         </p>
       {{/user}}
 
@@ -77,7 +77,7 @@
           <div class="panel-body">
 
             <h3>
-              <img class="img-circle" src="/picture" width="72" height="72" >
+              <img class="img-circle" src="picture" width="72" height="72" >
               {{name}}
               <a class="btn btn-default btn-sm" href="/logout">sign out</a>
             </h3>

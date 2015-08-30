@@ -1,11 +1,17 @@
 var static = require('node-static');
+var express = require('express');
+var app = express();
 
 var file = new static.Server('.');
 
-require('http').createServer(function (request, response) {
-  request.addListener('end', function () {
-    file.serve(request, response);
-  }).resume();
-}).listen(5000);
+// THIS IS BAD, EXPOSES ALL SECRETS
+app.use(express.static(__dirname));
 
-console.log("files: localhost:5000")
+var rk = require('./sources/runkeeper/app.js');
+rk.set('views', __dirname + '/sources/runkeeper/views');
+app.use('/sources/runkeeper', rk);
+
+
+app.listen(5000);
+
+console.log('files: localhost:5000');
