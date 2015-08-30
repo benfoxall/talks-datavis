@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>data</title>
+
+    <meta name="description" content="We generate a lot of data as we go about our lives">
+    <meta name="author" content="Ben Foxall">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="components/wo-reveal/theme/white.css" id="theme">
+
+    <style media="screen">
+      .reveal section img{
+        border:none;
+        box-shadow: none;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+        <section>
+          <h1>Your data and you</h1>
+        </section>
+
+        <section>
+          <section>
+            <h1>[stuff about me]</h1>
+          </section>
+          <section>
+            <h1>[WO]</h1>
+          </section>
+          <section>
+            <h1>[JSOxford]</h1>
+          </section>
+          <section>
+            <h1>[Summer of hacks]</h1>
+            <aside class="notes">
+              We're interested in helping people do practical stuff, which is a theme of this talk.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>[intro]</h1>
+          </section>
+          <section>
+            <img src="images/Last.fm_Logo_Black.png" height="100"/>
+          </section>
+          <section>
+            <h2>[@benjaminbenben lastfm]</h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>[overview]</h1>
+            <h3>visualisation</h3>
+            <h3>gathering data</h3>
+            <h3>rendering data</h3>
+            <h3>our data</h3>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Visualisation</h1>
+          </section>
+
+          <section data-transition="none">
+            <h1>Graphs</h1>
+          </section>
+
+          <section  data-transition="none">
+            <h1>Data &rarr; Graphs</h1>
+          </section>
+
+          <section  data-transition="none">
+            <h2>Data &rarr; Graphs &amp; People</h2>
+          </section>
+
+          <section  data-transition="none">
+            <h2>Stuff, Something &amp; Someone</h2>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Reasons to visualise</h1>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>for Someone</h1>
+
+            <aside class="notes">
+              You're helping a person understand Something
+               * Pulsars?
+            </aside>
+          </section>
+
+          <section data-background="images/pulsars-data.png" data-background-size="cover">
+            <aside class="notes">
+              PSR B1919+21
+           </aside>
+          </section>
+
+          <section data-background="images/pulsars.png" data-background-size="contain">
+            <aside class="notes">
+              PSR B1919+21
+
+              Jocelyn Bell Burnell and Antony Hewish
+           </aside>
+          </section>
+
+          <section>
+            <h2>Preattentive attributes</h2>
+            <aside class="notes">
+              **Before** you've started engaging with it
+            </aside>
+          </section>
+
+          <section>
+            <h2>how many 9s</h2>
+          </section>
+
+          <section>
+            <h2>[image flicker]</h2>
+            <aside class="notes">
+              We're trying to utilise these effects to help people understand data
+            </aside>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h1>for Stuff</h1>
+
+            <aside class="notes">
+              You're focused on making that thing as clear as possible
+            </aside>
+          </section>
+
+          <section data-background="images/minard.svg" data-background-size="contain">
+            <aside class="notes">
+              Minard
+            </aside>
+          </section>
+
+          <section>
+            $\text{data-ink ratio}=\frac{\text{``ink'' used to display the data}}{\text{total ``ink'' used to display the graphic}}$
+
+            <p><br /></p>
+
+            $\text{data density}=\frac{\text{number of entries in data matrix}}{\text{area of data graphic}}$
+            <aside class="notes">
+              You're focused on making that thing as clear as possible
+               * Minard?
+            </aside>
+          </section>
+
+          <section data-background="images/meta-xkcd.png" data-background-size="contain">
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h1>for Something</h1>
+
+            <aside class="notes">
+              Where it's about the graph itself
+               * Making something pretty for the sake of it
+               * Infographics
+            </aside>
+          </section>
+
+          <section data-background="images/infographics.png" data-background-size="cover">
+
+
+            <aside class="notes">
+              Where it's about the graph itself
+               * Making something pretty for the sake of it
+               * Infographics
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>for Someone Else</h1>
+
+            <aside class="notes">
+              Where the graph is purposefully misleading
+              (todo: try and make this positive)
+              * Truncated Axis
+              * Ignoring conventions
+            </aside>
+          </section>
+        </section>
+
+
+
+        <section>
+          <section>
+            <h1>My data</h1>
+          </section>
+
+          <section  data-transition="none">
+            <h2>Stuff, Something &amp; Someone</h2>
+          </section>
+
+          <section  data-transition="none">
+            <h2>My stuff, My thing &amp; Me</h2>
+          </section>
+
+          <section  data-transition="none">
+            <h2>My stuff, My thing, Me &amp; Other people</h2>
+
+            <article class="notes">
+              This is a crap visualisation
+            </article>
+          </section>
+        </section>
+
+
+        <section>
+          <section>
+            <h1>An Example</h1>
+          </section>
+
+          <section>
+            <img src="images/runkeeper.png" />
+          </section>
+
+          <section>
+            <h2>Stuff - Runkeeper data</h2>
+            <h2>Something - Chart</h2>
+            <h2>Someone - Me</h2>
+          </section>
+
+          <section>
+            <pre><code>
+    fetch('mydata.csv') // stuff
+      .then(renderChart) // something
+
+</code></pre>
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h1>Getting mydata.csv</h1>
+          </section>
+
+          <section>
+            <h2>[1. script]</h2>
+          </section>
+
+          <section>
+            <h2>[bash listing fetch]</h2>
+          </section>
+
+          <section>
+            <h2>[bash listing process]</h2>
+          </section>
+
+          <section>
+            <h2>+ format choice</h2>
+            <h2>- sharing</h2>
+          </section>
+
+          <section>
+            <h3>[2. web service]
+          </section>
+
+          <section>
+            <h3>[website screenshot]</h3>
+          </section>
+
+          <section>
+            <h3>+ openness</h3>
+            <h3>- waiting</h3>
+            <h3>- RTT (&rarr; server, &rarr; client)</h3>
+            <h3>- data storage/privacy</h3>
+          </section>
+
+          <section>
+            <h2>[3. proxy web service, client storage]
+          </section>
+
+          <section>
+            <h3>[website screenshot]</h3>
+          </section>
+
+          <section>
+            <h3>[website screenshot /data/url.json]</h3>
+            <aside class="notes">
+              instead of collecting all the data server side, we can provide a proxy
+              for the user to access their own data once they've logged in.
+            </aside>
+          </section>
+
+          <section>
+            <h3>[collection]</h3>
+            <code><pre>
+              fetch('data/fitnessActivity/xyz')
+                .then(function(d){ return d.json() })
+                .then(function(data){
+                  db.responses.add('data/fitnessActivity/xyz', data)
+                })
+            </pre></code>
+          </section>
+
+          <section>
+            <h3>[process]</h3>
+            <code><pre>
+              var csvStr = '';
+              db
+                .responses
+                .each(function(item){
+                  csvStr += toCSV(item);
+                })
+            </pre></code>
+          </section>
+
+          <section>
+            <h3>[serve]</h3>
+            <code><pre>
+              .on('fetch', function(e){
+                e.respondWith(
+                  process()
+                  .then(function(csvStr){
+                    return new Response(csvStr, {
+                      headers: { 'Content-Type': 'text/csv' }
+                    })
+                  })
+                )
+              })
+            </pre></code>
+          </section>
+
+          <section>
+            <h3>+ openness</h3>
+            <h3>+ waiting</h3>
+            <h3>+ async</h3>
+            <h3>+ data storage/privacy</h3>
+            <h3>++ my-data.csv?groupBy=month <!-- no additional request overhead + no server changes --></h3>
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Visualising data</h1>
+          </section>
+
+          <section>
+            <code><pre>
+              fetch('summary.json')
+                .then(function(res){return res.json()})
+                .then(function(summary){
+                  document.getElementById('distance').innerText = summary.distance
+                })
+            </pre></code>
+          </section>
+
+          <section>
+            <h1>56whatever <span class="fragment">km<span></h1>
+          </section>
+
+          <section>
+            <h2>[circumference of earth]</h2>
+
+            <!--  don’t think anyone knows how big the world is.
+
+              Or, I don’t see how anyone can understand how big it is.
+              I can understand how far away I am from the fridge, or
+              how far it is to the nearest shop; but I haven’t a clue
+              about how big the world is.
+
+              Other than “really big” perhaps. -->
+          </section>
+
+          <section>
+            <h1>[UK length]</h1>
+
+            <!-- I really like turning the map on its side, ireland is like
+              the mild weathered island off the coast -->
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Digging deeper</h1>
+          </section>
+
+          <section>
+            <h1>[distance vs time]</h1>
+            <h2 class="fragment">activity plots</h2>
+            <h2 class="fragment">final paths</h2>
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h1>Geo data</h1>
+          </section>
+
+          <section>
+            [geojson sw script]
+          </section>
+
+          <section>
+            <h2>Lat, Lon, Alt</h2>
+            <h3>[110k points]</h3>
+          </section>
+
+          <section>
+            <h1>[canvas]</h1>
+            <h2 class="fragment">[redraw-uk]</h2>
+            <h2 class="fragment">[redraw-oxford]</h2>
+          </section>
+
+          <section>
+            <p>[normal], [Equirectangular]</p>
+            <aside class="notes">
+              So, this is how we map UK, and this is what we've drawn.
+
+              This is **all cool**, we've played with the data - we've created something
+            </aside>
+          </section>
+
+          <section>
+            <h1>d3.geo</h1>
+          </section>
+
+          <section>
+            <h1>[uk paths]</h1>
+            <aside class="notes">
+              <ol>
+                <li>projection for mapping from equi -> usual</li>
+                <li>
+              </ol>
+            </aside>
+          </section>
+
+          <section>
+            <h1>[running paths]</h1>
+            <aside class="notes">
+              <ol>
+                <li>Start with a single path, describe the use of an svg</li>
+                <li>bring in the rest</li>
+                <li>by displaying the paths together we've solved the problem of the canvas map</li>
+                <li>bounding boxes</li>
+                <li>Oxford - showing the gathered together paths</li>
+                <li>Brighton - where we are, shoreham, hacks</li>
+              </ol>
+            </aside>
+          </section>
+
+          <section>
+            [sw cartesian coords]
+          </section>
+
+          <section>
+            <h1>[webgl]</h1>
+            <aside class="notes">
+              <ol>
+                <li>Canada - describe roads</li>
+                <li>rotating around</li>
+                <li>angle down</li>
+              </ol>
+            </aside>
+          </section>
+        </section>
+
+
+
+      </div>
+
+    </div>
+
+    <script src="bower_components/reveal.js/lib/js/head.min.js"></script>
+    <script src="bower_components/reveal.js/js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: true,
+
+        width: 1280,
+        height: 720,
+
+        transition: 'slide',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
+          { src: 'bower_components/reveal.js/plugin/math/math.js', async: true }
+        ],
+
+        // // if I've bothered to install it locally
+        // // bower install mathjax
+        // math: {
+        //    mathjax: 'bower_components/MathJax/MathJax.js'
+        // }
+      });
+
+    </script>
+
+  </body>
+</html>
