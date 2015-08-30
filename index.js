@@ -1,11 +1,7 @@
-var static = require('node-static');
 var express = require('express');
 var app = express();
 
-var file = new static.Server('.');
-
-// THIS IS BAD, EXPOSES ALL SECRETS
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/public'));
 
 var rk = require('./sources/runkeeper/app.js');
 rk.set('views', __dirname + '/sources/runkeeper/views');
