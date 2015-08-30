@@ -384,8 +384,8 @@
             </pre></code>
           </section>
 
-          <section>
-            <h1>56whatever <span class="fragment">km<span></h1>
+          <section data-slide-script="runkeeperSummary">
+            <h1 class="value">-</h1>
           </section>
 
           <section>
@@ -511,7 +511,7 @@
 
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
+      var options = {
         controls: false,
         progress: false,
         history: true,
@@ -525,15 +525,57 @@
         // Optional reveal.js plugins
         dependencies: [
           { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
-          { src: 'bower_components/reveal.js/plugin/math/math.js', async: true }
-        ],
+          // { src: 'bower_components/reveal.js/plugin/math/math.js', async: true }
+
+
+          // Slide deps
+          { src: 'components/dynamic-slide/dynamic-slide.js', async: false },
+          { src: 'bower_components/d3/d3.js', async: false }
+
+        ]
 
         // // if I've bothered to install it locally
         // // bower install mathjax
         // math: {
         //    mathjax: 'bower_components/MathJax/MathJax.js'
         // }
-      });
+      };
+
+
+      // look through slides for any dependencies and load them
+      [].forEach.call(document.querySelectorAll('[data-slide-script]'),function(el) {
+        var key = el.dataset.slideScript;
+        var src = 'slidejs/' + key + '.js';
+        var orig;
+
+        var found = options.dependencies.filter(function(dep){
+          return dep.src == src;
+        })[0];
+
+        if(found) {
+          var orig = found.callback;
+          found.callback = callback;
+          return;
+        }
+
+        options.dependencies.push({
+          src: src,
+          async: true,
+          callback: callback
+        })
+
+        function callback(){
+          var Fn = window[key];
+          if(typeof(Fn) !== 'function')
+            throw new Error('slide Fn not defined: ' + key + '()')
+
+          if(orig) orig();
+          new Fn(el);
+        }
+      })
+
+
+      Reveal.initialize(options);
 
     </script>
 
