@@ -5,7 +5,7 @@
 
   // pass shown/hidden events down to the fragments and slides
 
-  var shown = new CustomEvent("shown", {}), 
+  var shown = new CustomEvent("shown", {}),
       hidden = new CustomEvent("hidden", {}),
       currentSlide;
 
@@ -41,9 +41,12 @@
     }
 
     // re-fire slide shown events incase it was already loaded
-    // if(type == 'shown' && currentSlide == this.slide_el){
-    //   this.slide_el.dispatchEvent(shown);
-    // }
+    // (this now happens automatically on init)
+    if(Reveal.isReady()){
+      if(type == 'shown' && currentSlide == this.slide_el){
+        this.slide_el.dispatchEvent(shown);
+      }
+    }
 
     return this;
   }
