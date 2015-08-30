@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-sw">
+  <head>
+    <meta charset="utf-8">
+    <title>Runkeeper to csv</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+      .pulse { -webkit-animation: pulse 0.75s infinite alternate; -moz-animation: pulse 0.75s infinite alternate; -o-animation: pulse 0.75s infinite alternate; animation: pulse 0.75s infinite alternate; }
+      @-webkit-keyframes pulse { from { opacity: 0.25; } to { opacity: 1; } }
+      @-moz-keyframes pulse { from { opacity: 0.25; } to { opacity: 1; } }
+      @-o-keyframes pulse { from { opacity: 0.25; } to { opacity: 1; } }
+      @keyframes pulse { from { opacity: 0.25; } to { opacity: 1; } }
+      .no-sw .downloads{
+        display:none;
+      }
+      .sw-registering .downloads{
+        display:block;
+        opacity:0.5;
+      }
+      .sw-registered .downloads{
+        display:block;
+        opacity:1;
+      }
+      .sw-failed .downloads{
+        background: red;
+      }
+      .sw-notice {
+        display:none;
+      }
+      .no-sw .sw-notice, .sw-failed .sw-notice{
+        display:block;
+      }
+    </style>
+
+    <script type="text/javascript">
+
+      var htm = document.getElementsByTagName('html')[0];
+
+      if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+        location.protocol = 'https:';
+      }
+
+      if ('serviceWorker' in navigator) {
+        htm.className = 'sw-registering';
+
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          htm.className = 'sw-registered';
+        }).catch(function(err) {
+          htm.className = 'sw-failed';
+        });
+      }
+    </script>
+
+  </head>
+  <body>
+    <a href="https://github.com/benfoxall/runkeeper-to-csv"><img style="position: absolute; top: 0; right: 0; border: 0;" src="gh.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+
+    <div class="container">
+      <div class="page-header">
+        <h1>
+          Runkeeper to csv
+        </h1>
+      </div>
+      <p class="lead">This fetches data from the <a href="http://developer.runkeeper.com/healthgraph">runkeeper healthgraph api</a> and converts it to csv documents</p>
+
+      {{^user}}
+        <p>
+          <a href="/auth/runkeeper" class="btn btn-primary">sign in with runkeeper</a>
+        </p>
+      {{/user}}
+
+      {{#user}}
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+
+            <h3>
+              <img class="img-circle" src="/picture" width="72" height="72" >
+              {{name}}
+              <a class="btn btn-default btn-sm" href="/logout">sign out</a>
+            </h3>
+
+            <hr />
+
+            <div id="ui"></div>
+
+            <hr />
+
+            <div class="sw-notice">
+              <p class="lead">
+                WARNING: This page requires the
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">Service Worker API</a>
+                support
+              </p>
+              <p>
+                If you can see this message, it looks like it doesn't, or we've hit some kind of problem.
+              </p>
+              <p>
+                Try using a browser like chrome or firefox - if are, and you're still having issues,
+                please do <a href="twitter.com/benjaminbenben">get in touch</a>.
+              </p>
+
+              <hr />
+            </div>
+
+            <p class="downloads">
+              <a class="btn btn-default" href="sw/distances.csv" data-download="distances.csv">distances.csv</a>
+              <a class="btn btn-default" href="sw/summary.csv" data-download="summary.csv">summary.csv</a>
+              <a class="btn btn-default" href="sw/paths.csv" data-download="paths.csv">paths.csv</a>
+              <a class="btn btn-default" href="sw/geo.json" data-download="geo.csv">geo.json</a>
+              <a class="btn btn-default" href="sw/geo.simple.json" data-download="geo.simple.csv">geo.simple.json</a>
+              <span class="help-block">a partial file can be saved while fetching more data</span>
+            </p>
+
+
+          </div>
+        </div>
+
+        <script src="bower_components/react/react.js"></script>
+        <script src="ui.js"></script>
+
+        <script src="bower_components/FileSaver/FileSaver.js"></script>
+        <script type="text/javascript">
+          // a work around for https://code.google.com/p/chromium/issues/detail?id=468227
+          document.addEventListener('click', function(e){
+            if(e.target.dataset.download){
+              e.preventDefault();
+
+              if(e.target.classList.contains('disabled')){
+                return;
+              }
+
+              e.target.classList.add('disabled')
+
+              fetch(e.target.href)
+                .then(function(res){ return res.blob(); })
+                .then(function(b){
+                  e.target.classList.remove('disabled')
+                  saveAs(b, e.target.dataset.download)
+                })
+            }
+          })
+        </script>
+
+      {{/user}}
+
+    </div>
+
+
+
+  </body>
+</html>
