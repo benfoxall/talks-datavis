@@ -22,6 +22,24 @@
         border:none;
         box-shadow: none;
       }
+
+      svg.runkeeper-duration text {
+        font-family: Gotham, arial;
+        font-size:22px;
+      }
+      svg.runkeeper-duration path {
+        stroke-width:1;
+        fill:none;
+        stroke: none;
+      }
+      svg.runkeeper-duration .line {
+        stroke: #f08;
+        opacity: 0.5
+      }
+      /*svg.runkeeper-duration .axis > g:first-child text{
+        display: none;
+      }*/
+
     </style>
 
   </head>
@@ -371,7 +389,7 @@
 
         <section>
           <section>
-            <h1>Visualising data</h1>
+            <h1>summary.csv</h1>
           </section>
 
           <section>
@@ -410,13 +428,13 @@
 
         <section>
           <section>
-            <h1>Digging deeper</h1>
+            <h1>distances.csv</h1>
           </section>
 
-          <section>
-            <h1>[distance vs time]</h1>
+          <section  data-slide-script="runkeeperDuration">
+            <!-- <h1>[distance vs time]</h1>
             <h2 class="fragment">activity plots</h2>
-            <h2 class="fragment">final paths</h2>
+            <h2 class="fragment">final paths</h2> -->
           </section>
 
         </section>

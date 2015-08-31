@@ -5,8 +5,7 @@
     var config = Reveal.getConfig();
     var w = config.width,
         h = config.height,
-        r = Math.min(w,h) / 2.3,
-        circ = 6371000 * Math.PI * 2;
+        r = Math.min(w,h) / 2.3;
 
 
     var svg = d3.select(el)
