@@ -4,6 +4,7 @@
 
   function runkeeperDuration(el){
 
+
     var config = Reveal.getConfig();
     var w = config.width,
         h = config.height,
@@ -14,6 +15,10 @@
         .attr('width',  w)
         .attr('height', h)
         .attr('class', 'runkeeper-duration');
+
+    var circles = svg.selectAll('circle');
+    var paths = svg.selectAll('.line');
+
 
     d3.csv('/sw/distances.csv')
     .row(function(d) { return [
@@ -28,8 +33,8 @@
         return d[0] && d[1]
       })
 
-      // split into paths
-      var paths = d3.values(distances.reduce(function(memo,item){
+      // split into activities
+      var activities = d3.values(distances.reduce(function(memo,item){
         if(!memo[item[2]])
           memo[item[2]] = []
 
@@ -39,7 +44,7 @@
       },{}));
 
       // find the last item for each activity
-      var maxes = paths.map(function(durations){
+      var maxes = activities.map(function(durations){
         return durations[durations.length-1]
       })
 
@@ -58,6 +63,11 @@
       var xaxis = d3.svg.axis().scale(x);
       var yaxis = d3.svg.axis().scale(y)
                     .orient("left");
+
+      var line = d3.svg.line()
+                    .x(function(d){ return x(d[1]) })
+                    .y(function(d){ return y(d[0]) })
+
 
       svg.append('g')
         .attr('class', 'axis')
@@ -79,32 +89,62 @@
         .style('text-anchor', 'middle')
         .attr('transform', 'translate(' + margin/2 + ', ' + d3.mean(y.range()) + ') rotate(-90)')
 
-      var circles = svg.selectAll('circle')
-        .data(maxes)
 
-      circles
-        .enter()
-        .append('circle')
-        .style('fill', '#08f')
-        .attr('cx', function(d){return x(d[1])})
-        .attr('cy', function(d){return y(d[0])})
-        .attr('r', 0)
+      var slide = new DynamicSlide(el);
+      slide.fragments([
+        function(){
+
+          circles = circles
+            .data(maxes)
+
+          circles
+            .enter()
+            .append('circle')
+            .style('fill', '#08f')
+            .attr('cx', function(d){return x(d[1])})
+            .attr('cy', function(d){return y(d[0])});
+
+          circles
+            .attr('r', 0)
+            .transition()
+            .attr('r', 4)
+            .delay(function(d,i){return i*10})
+
+
+        },
+        function(){
+
+          paths = paths.data(activities)
+
+          paths
+            .enter()
+            .append('path')
+            .attr('class', 'line')
+            .attr('d', line);
+
+          paths
+            .style('opacity', 0)
+            .transition()
+            .style('opacity', 0.8)
+            .duration(1000)
+            .delay(function(d,i){return i*10});
+
+          circles
+            .transition()
+            .attr('r', 0)
+            .delay(function(d,i){return (i*10) + 500})
+
+        }
+      ])
+
+
+      slide.addEventListener('hidden', function(){
+        paths
         .transition()
-        .attr('r', 4)
-        .delay(function(d,i){return i*10})
-
-
-      var line = d3.svg.line()
-                    .x(function(d){ return x(d[1]) })
-                    .y(function(d){ return y(d[0]) })
-
-      var paths = svg.selectAll('.line').data(paths)
-
-      paths
-        .enter()
-        .append('path')
-        .attr('class', 'line')
-        .attr('d', line)
+        .style('opacity', 0.8)
+        .remove();
+        circles.remove();
+      })
 
     })
   }
