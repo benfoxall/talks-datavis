@@ -69,7 +69,7 @@ self.addEventListener('message', function(event) {
   switch (event.data.action) {
 
     case 'start':
-      if(!started) index('/fitnessActivities',[]);
+      if(!started) index('/fitnessActivities?' + Math.random(),[]);
       started = true;
       break;
 
