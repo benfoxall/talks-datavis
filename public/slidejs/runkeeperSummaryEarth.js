@@ -29,24 +29,7 @@
 
     var path = svg.append('path')
       .attr('transform', 'translate('+ w/2 + ' ' + h/2 +')')
-      .style('fill', '#000');
-
-      //
-      // .datum(0)
-      // .transition()
-      // .delay(1000)
-      // .duration(5000)
-      // .attrTween('d', function(d, i, a){
-      //   return function(t){
-      //     return arc(t*d)
-      //   }
-      //   console.log(d)
-      // })
-    //
-    // global.p = svg.append('path')
-    //   .attr('d', arc(1510270))
-    //   .attr('transform', 'translate('+ w/2 + ' ' + h/2 +')')
-    //   .style('fill', '#000')
+      .style('fill', '#08f');
 
 
     d3.csv('/sw/summary.csv', function(error, summary) {
