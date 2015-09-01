@@ -29,7 +29,7 @@
 
 
 
-    fetch('sw/geo.simple.json')
+    fetch('sw/geo.json')
       .then(function(res){
         return res.json()
       })
@@ -39,7 +39,7 @@
           // clear
           ctx.fillStyle = '#fff'
           ctx.fillRect(0,0,w,h)
-          ctx.fillStyle = '#08f';
+          ctx.fillStyle = 'rgba(0,136,255,0.2)';
 
           geo.features.forEach(function(f){
             f.geometry.coordinates.forEach(function(c){
