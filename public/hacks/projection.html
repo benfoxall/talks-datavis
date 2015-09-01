@@ -23,14 +23,14 @@
       .center([0, 55.4])
       .rotate([4.4, 0])
       .parallels([50, 60])
-      .scale(1200 * 3)
+      .scale(1200 * 2)
       .translate([width / 2, height / 2]);
 
     var projection2 = d3.geo.equirectangular()
       .center([0, 55.4])
       .rotate([4.4, 0])
       // .parallels([50, 60])
-      .scale(1200 * 3)
+      .scale(1200 * 2)
       .translate([width / 2, height / 2]);
 
     var path = d3.geo.path()
@@ -42,18 +42,19 @@
       .attr("height", height);
 
     d3.json("../data/uk.json", function(error, uk) {
-      // svg.append("path")
-      //     .datum(topojson.feature(uk, uk.objects.subunits))
-      //     .attr("d", path)
-          // .transition()
-          // .duration(5000)
-          // .attr("d", path.projection(projection2));
-
+      return;
       svg.append("path")
           .datum(topojson.feature(uk, uk.objects.subunits))
-          .attr("d", path.projection(projection));
-    });
+          .attr("d", path)
+          .transition()
+          .duration(5000)
+          .attr("d", path.projection(projection2));
 
+      // svg.append("path")
+      //     .datum(topojson.feature(uk, uk.objects.subunits))
+      //     .attr("d", path.projection(projection));
+    });
+    //
     d3.json("../data/uk.points.json", function(error, points) {
       var circle = svg
         .selectAll('circle')
