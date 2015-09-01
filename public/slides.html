@@ -43,6 +43,32 @@
         stroke: #08f;
         opacity: 0.5;
       }
+
+
+      .runkeeper-paths path.activity {
+        stroke-width: 1px;
+        stroke: rgba(255, 150, 0, 0.8);
+        /*stroke: #f80;*/
+        stroke-linejoin: round;
+        fill: none;
+      }
+      .runkeeper-paths path.graticule {
+        stroke-width: 1px;
+        stroke: #ccc;
+        fill: none;
+      }
+      .runkeeper-paths circle.choice {
+        transition:opacity .5s;
+        opacity: 0.02;
+        cursor: pointer;
+      }
+      .runkeeper-paths circle.choice:hover {
+        opacity: .6
+      }
+      .runkeeper-paths .vis {
+        min-height:600px;
+      }
+
     </style>
 
   </head>
@@ -497,8 +523,7 @@
             </aside>
           </section>
 
-          <section>
-            <h1>[running paths]</h1>
+          <section data-slide-script="runkeeperPaths">
             <aside class="notes">
               <ol>
                 <li>Start with a single path, describe the use of an svg</li>
@@ -570,7 +595,9 @@
 
           //
           { src: 'bower_components/d3/d3.js', async: false },
-          { src: 'bower_components/topojson/topojson.js', async: false }
+          { src: 'bower_components/topojson/topojson.js', async: false },
+          { src: 'sources/runkeeper/geofn.js', async: false },
+
 
         ]
 
