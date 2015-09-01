@@ -48,7 +48,6 @@
       }, 0);
 
       rect = rect.datum(distance);
-      console.log("scale", scale(distance))
 
 
       var slide = new DynamicSlide(el);

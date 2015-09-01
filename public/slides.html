@@ -488,8 +488,7 @@
             <h1>d3.geo</h1>
           </section>
 
-          <section>
-            <h1>[uk paths]</h1>
+          <section data-slide-script="d3Projections">
             <aside class="notes">
               <ol>
                 <li>projection for mapping from equi -> usual</li>
@@ -568,7 +567,10 @@
 
           // Slide deps
           { src: 'components/dynamic-slide/dynamic-slide.js', async: false },
-          { src: 'bower_components/d3/d3.js', async: false }
+
+          //
+          { src: 'bower_components/d3/d3.js', async: false },
+          { src: 'bower_components/topojson/topojson.js', async: false }
 
         ]
 
