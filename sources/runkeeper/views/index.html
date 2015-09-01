@@ -45,7 +45,7 @@
       if ('serviceWorker' in navigator) {
         htm.className = 'sw-registering';
 
-        navigator.serviceWorker.register('sw.js').then(function(registration) {
+        navigator.serviceWorker.register('/sw.runkeeper.js').then(function(registration) {
           htm.className = 'sw-registered';
         }).catch(function(err) {
           htm.className = 'sw-failed';
