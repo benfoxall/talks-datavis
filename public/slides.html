@@ -459,12 +459,29 @@
           </section>
 
           <section>
-            <p>[normal], [Equirectangular]</p>
-            <aside class="notes">
-              So, this is how we map UK, and this is what we've drawn.
-
-              This is **all cool**, we've played with the data - we've created something
-            </aside>
+            <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+              <style>
+                use.map{
+                  fill:#000;
+                  transition: .85s transform !important;
+                }
+                use.map.fragment {
+                  opcity: 1;
+                  transform: translate(0, 600px)
+                }
+                use.map.fragment.right{
+                  transform: translate(500px, 0)
+                }
+                use.map.fragment.left{
+                  transform: translate(-500px, 0)
+                }
+                use.map.fragment.visible {
+                  transform: translate(0, 0)
+                }
+              </style>
+              <use x="-300" xlink:href="images/uk-path.svg#map" class="map fragment left"/>
+              <use x="300" xlink:href="images/uk-path-equi.svg#map"  class="map fragment right"/>
+           </svg>
           </section>
 
           <section>
