@@ -48,6 +48,8 @@
         return durations[durations.length-1]
       })
 
+      distances = null;
+
 
       // x - time
       var x = d3.scale.linear()
