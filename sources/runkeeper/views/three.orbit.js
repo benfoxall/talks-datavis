@@ -129,6 +129,12 @@ THREE.OrbitControls = function ( object, domElement ) {
 	var startEvent = { type: 'start' };
 	var endEvent = { type: 'end' };
 
+	// forces
+
+	var __radius,
+			__phi,
+			__theta;
+
 	this.rotateLeft = function ( angle ) {
 
 		if ( angle === undefined ) {
@@ -213,6 +219,17 @@ THREE.OrbitControls = function ( object, domElement ) {
 		}
 
 	};
+
+
+	this.forceRadius = function(v){
+		__radius = v;
+	}
+	this.forcePhi = function(v){
+		__phi = v;
+	}
+	this.forceTheta = function(v){
+		__theta = v;
+	}
 
 	this.dollyIn = function ( dollyScale ) {
 
@@ -302,6 +319,10 @@ THREE.OrbitControls = function ( object, domElement ) {
 		phi = Math.max( EPS, Math.min( Math.PI - EPS, phi ) );
 
 		var radius = offset.length() * scale;
+
+		if(__radius) radius = __radius;
+		if(__phi) phi = __phi;
+		if(__theta) theta = __theta;
 
 		// restrict radius to be between desired limits
 		radius = Math.max( this.minDistance, Math.min( this.maxDistance, radius ) );
