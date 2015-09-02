@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="components/wo-reveal/theme/white.css" id="theme">
 
     <style media="screen">
+      path {
+        /*mix-blend-mode: overlay;*/
+      }
       .reveal section {
         padding:0 !important;
       }
@@ -535,9 +538,14 @@
               </ol>
             </aside>
           </section>
+        </section>
 
+        <section>
           <section>
-            [sw cartesian coords]
+            <h1>paths.bin</h1>
+          </section>
+
+          <section  data-slide-script="runkeeperGlobe">
           </section>
 
           <section>
@@ -549,14 +557,6 @@
                 <li>angle down</li>
               </ol>
             </aside>
-          </section>
-        </section>
-
-
-
-        <section>
-          <section>
-            <h1>paths.bin</h1>
           </section>
         </section>
 
@@ -598,6 +598,8 @@
           { src: 'bower_components/topojson/topojson.js', async: false },
           { src: 'sources/runkeeper/geofn.js', async: false },
 
+          { src: 'sources/runkeeper/bower_components/threejs/build/three.js', async: false },
+          { src: 'sources/runkeeper/three.orbit.js', async: false },
 
         ]
 
