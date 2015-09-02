@@ -1,3 +1,5 @@
+var camera, scene, renderer, first, world, controls;
+
 (function(global){
 
   function runkeeperGlobe(el){
@@ -10,16 +12,12 @@
     var element = document.getElementById('vis');
 
 
-    var camera, scene, renderer, first, world;
-
     var line_material = new THREE.LineBasicMaterial({
       linewidth: 2,
       color: 0x0088ff,
       transparent: true,
       opacity: 0.4
     });
-
-    console.log("WEBGL3d")
 
     var m = 'box=-1.2413730587142544,51.75636252816891,68.74290644654184'.match('box=(.*)$');
     if(!m) throw new Error("no box selected");
@@ -74,6 +72,7 @@
 
     controls = new THREE.OrbitControls( camera );
     controls.damping = 0.2;
+    controls.noPan = true;
 
     fetch('/sw/binary.path.b')
       .then(function(res){return res.blob()})
@@ -115,14 +114,53 @@
       });
     }
 
-
+    var rendering;
     function render() {
+      if(!rendering) return;
     	requestAnimationFrame( render );
+
+      TWEEN.update();
     	renderer.render( scene, camera );
+      // controls.rotateLeft()
+      // controls.update()
+
     }
-    render();
+
+    var slide = new DynamicSlide(el);
+    slide.addEventListener('shown', function(){
+      if(!rendering) {
+        rendering = true;
+        render();
+      }
+      new TWEEN.Tween({radius:100000000, theta: 0, phi: 0})
+        .to( { radius: 3000, theta: Math.PI*6, phi: 1 }, 10000 )
+  			.easing( TWEEN.Easing.Quintic.Out )
+  			.onUpdate( function () {
+          controls.forceRadius(this.radius);
+          controls.forceTheta(this.theta);
+          controls.forcePhi(this.phi);
+          controls.update()
+  			} ).
+        chain(
+
+          new TWEEN.Tween({theta: Math.PI*6, radius: 3000})
+            .to( {theta: Math.PI*8, radius: 5000}, 15000 )
+      			.easing( TWEEN.Easing.Quadratic.InOut )
+      			.onUpdate( function () {
+              controls.forceRadius(this.radius);
+              controls.forceTheta(this.theta);
+              // controls.forcePhi(this.phi);
+              controls.update()
+      			} )
+
+        )
+  			.start();
 
 
+    }, false);
+    slide.addEventListener('hidden', function(){
+      rendering = false;
+    }, false);
 
 
 
