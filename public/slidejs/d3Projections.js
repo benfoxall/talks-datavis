@@ -54,8 +54,9 @@
           setTimeout(function(){
             svg.selectAll('*').remove()
           }, 1000)
-
         })
+
+        var map;
 
         slide.fragments([
           function() {
@@ -68,7 +69,7 @@
               .attr('cy', function(d,i){return d[1]})
           },
           function() {
-            svg.append("path")
+            map = svg.append("path")
                 .datum(topojson.feature(uk, uk.objects.subunits))
                 .attr("d", path)
                 .style('fill', 'none')
@@ -79,6 +80,16 @@
               .delay(function(){return Math.random()*1000})
               .attr('r', 0)
               .remove()
+          },
+          function(){
+            map
+              .style('fill', '#fff')
+              // .attr('transform', 'rotate(0, ' + w/2 + ', '+ h/2 +')')
+              .transition()
+              .duration(2000)
+              .attr('transform', 'rotate(-90, ' + w/2 + ', '+ h/2 +')')
+              .transition()
+              .style('fill', '#000')
           }
         ])
       });
