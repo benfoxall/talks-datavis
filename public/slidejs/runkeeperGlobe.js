@@ -1,13 +1,12 @@
-var camera, scene, renderer, first, world, controls;
-
 (function(global){
 
   function runkeeperGlobe(el){
 
+    var camera, scene, renderer, first, world, controls;
+
     var config = Reveal.getConfig();
     var w = config.width,
         h = config.height;
-
 
     var element = document.getElementById('vis');
 
