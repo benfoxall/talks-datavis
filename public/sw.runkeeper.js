@@ -64,6 +64,14 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('fetch', function(event) {
 
+    if(event.request.url.match(/sw\/hello\.txt$/)){
+      event.respondWith(
+        new Response( "Hello from your Service Worker", {
+          headers: { 'Content-Type': 'text/plain' }
+        })
+      )
+    }
+
     if(event.request.url.match(/sw\/summary\.csv$/)){
       respond(event, summaryResponse)
     }

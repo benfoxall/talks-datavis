@@ -14,6 +14,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="code-github.css">
+
     <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
     <link rel="stylesheet" href="components/wo-reveal/theme/white.css">
 
@@ -42,6 +45,9 @@
             <h1>[JSOxford]</h1>
           </section>
           <section>
+            <h1>🌞🔚⏩️📢🍹🎉🍖🆙🚀🍠</h1>
+          </section>
+          <section>
             <h1>[Summer of hacks]</h1>
             <aside class="notes">
               We're interested in helping people do practical stuff, which is a theme of this talk.
@@ -62,19 +68,19 @@
         </section-->
 
         <section>
-          <section>
+          <section data-background="#fff">
             <!-- <h1>[overview]</h1> -->
-            <h3 class="heading-1">reasons to visualise</h3>
-            <h3 class="heading-2">collecting data</h3>
-            <h3 class="heading-3">visualising data</h3>
-            <h3 class="heading-4">my data and me</h3>
+            <h3><span class="heading-1">visualisation</span></h3>
+            <h3><span class="heading-2">collecting data</span></h3>
+            <h3><span class="heading-3">visualising data</span></h3>
+            <h3><span class="heading-4">my data and me</span></h3>
           </section>
         </section>
 
 
         <section>
           <section>
-            <h1>reasons to visualise</h1>
+            <h1><span class="heading-1">visualisation</span></h1>
           </section>
 
           <!-- <section data-transition="none">
@@ -86,8 +92,9 @@
           </section> -->
 
           <section  data-transition="none">
-            <h1>Data &rarr; Graphs</h1>
-            <h1 class="fragment">For Humans</h1>
+            <!-- <h1>visualisation:</h1> -->
+            <h2 class="fragment">Data &rarr; Graphs</h2>
+            <h2 class="fragment">For Humans</h2>
           </section>
 
         </section>
@@ -224,192 +231,160 @@
 
 
         <section>
-          <section><h1>Collecting Data</h1></section>
-          <section><h2>data.gov.uk</h2></section>
-          <section><h2>wikipedia</h2></section>
-          <section><h2>Making stuff up</h2></section>
+          <section>
+            <h1><span class="heading-2">Collecting Data</span></h1>
+          </section>
+          <section>
+            <h1>public data</h1>
+            <h2 class="fragment">data.gov.uk</h2>
+            <h2 class="fragment">wikipedia</h2>
+            <h2 class="fragment">google</h2>
+            <h2 class="fragment">Ask people</h2>
+            <h2 class="fragment">Make stuff up</h2>
+          </section>
+
+          <section>
+            <h1>personal data</h1>
+            <h2 class="fragment">download from device</h2>
+            <h2 class="fragment"><span class="fragment highlight-blue">fetch back from the cloud</span></h2>
+          </section>
         </section>
 
-        <section>
-          <section><h1>Collecting <em>Your</em> Data</h1></section>
+        <!-- <section>
           <section><img src="images/fitbit.png" /></section>
+          <section><img src="images/finder-fitbit-csv.png" /></section>
           <section>
             <table border="1" style="font-size:40%">
             <tbody><tr><td>Date</td> <td>Calories Burned</td> <td>Steps</td> <td>Distance</td> <td>Floors</td> <td>Minutes Sedentary</td> <td>Minutes Lightly Active</td> <td>Minutes Fairly Active</td> <td>Minutes Very Active</td> <td>Activity Calories</td> </tr> <tr><td>01-08-2015</td> <td>2,665</td> <td>4,070</td> <td>3.57</td> <td>0</td> <td>1,289</td> <td>151</td> <td>0</td> <td>0</td> <td>696</td> </tr> <tr><td>02-08-2015</td> <td>3,445</td> <td>12,130</td> <td>10.63</td> <td>0</td> <td>583</td> <td>278</td> <td>15</td> <td>30</td> <td>1,715</td> </tr> <tr><td>03-08-2015</td> <td>3,218</td> <td>8,989</td> <td>7.87</td> <td>0</td> <td>682</td> <td>248</td> <td>11</td> <td>24</td> <td>1,398</td> </tr> <tr><td>04-08-2015</td> <td>3,449</td> <td>11,833</td> <td>10.37</td> <td>0</td> <td>629</td> <td>270</td> <td>31</td> <td>30</td> <td>1,708</td> </tr> <tr><td>05-08-2015</td> <td>3,113</td> <td>7,494</td> <td>6.57</td> <td>0</td> <td>737</td> <td>251</td> <td>11</td> <td>13</td> <td>1,281</td> </tr> <tr><td>06-08-2015</td> <td>3,462</td> <td>11,590</td> <td>10.16</td> <td>0</td> <td>651</td> <td>314</td> <td>26</td> <td>20</td> <td>1,782</td> </tr> <tr><td>07-08-2015</td> <td>3,184</td> <td>8,011</td> <td>7.02</td> <td>0</td> <td>620</td> <td>300</td> <td>7</td> <td>4</td> <td>1,412</td> </tr> <tr><td>08-08-2015</td> <td>2,972</td> <td>7,840</td> <td>6.87</td> <td>0</td> <td>687</td> <td>202</td> <td>24</td> <td>9</td> <td>1,169</td> </tr> <tr><td>09-08-2015</td> <td>2,754</td> <td>6,448</td> <td>6.71</td> <td>0</td> <td>1,345</td> <td>58</td> <td>1</td> <td>36</td> <td>790</td> </tr> <tr><td>10-08-2015</td> <td>2,072</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> <tr><td>11-08-2015</td> <td>2,071</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> <tr><td>12-08-2015</td> <td>2,070</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> <tr><td>13-08-2015</td> <td>2,070</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> <tr><td>14-08-2015</td> <td>2,072</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> <tr><td>15-08-2015</td> <td>2,070</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> <tr><td>16-08-2015</td> <td>2,070</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> <tr><td>17-08-2015</td> <td>2,070</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> <tr><td>18-08-2015</td> <td>2,070</td> <td>0</td> <td>0</td> <td>0</td> <td>1,440</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> </tr> </tbody></table>
           </section>
           <section><img src="images/fitbit-request.png" class="stretch" /></section>
-          <!-- <section>
-            <code><pre>
-              "!DATA_TYPE": [
-                  "BODY",
-                  "FOODS",
-                  "ACTIVITIES",
-                  "SLEEP"
-              ],
-            </pre></code>
-          </section> -->
           <section>
             <p style="font-size:70%">"&#36;os" "&#36;browser" "&#36;referrer" "&#36;referring_domain" "&#36;current_url"  <span class="fragment highlight-blue">"&#36;browser_version" "&#36;screen_height" "&#36;screen_width"</span> "mp_lib" "&#36;lib_version" "distinct_id" <span class="fragment highlight-blue">"city" "country"</span> "interface" "member" "state" "timezone" "Api Usage" "City" "State" "Member" "Tracker" "Locale" "LocaleLang" "LocaleReal" "Loggedin" "&#36;initial_referrer" "&#36;initial_referring_domain" "Environment" "Logged In" "Platform" "Operating System Version" "&#36;search_engine" "Profile Country" "Timezone" "Premium" "iPhone" "SignUp Cohort" "SignUp Cohort Date" "SignUp Offer" "SignUp iPhone" "SignUp OAuth" "Condition" "Activity Level" "Api Usage Date" "Api User" "utm_source" "utm_medium" "utm_campaign" "Age" "Has Android App" "Paired One" "Has iPhone App" "Paired Zip" "Paired Aria" "Height" "Premium Expired" "Paired Devices" "Goal Weight Change" "Paired Force" "Paired Ultra" "Gender" "Google Linked" "GoalPrimary" "Food Plan Intensity" "Paired Flex" <span class="fragment highlight-blue">"Body Type"</span> "User Age Range" "Paired Classic" "Facebook Linked" "!PAGE_TYPE" "!UI_EVENT" "!TIME_PERIOD" "!DATA_TYPE" "!FILE_FORMAT" "token"</p>
           </section>
           <section>
             <h1>"Body Type": null</h1>
           </section>
-        </section>
-
-        <!--section>
-          <section>
-            <h1>My data</h1>
-          </section>
-
-          <section  data-transition="none">
-            <h2>Stuff, Something &amp; Someone</h2>
-          </section>
-
-          <section  data-transition="none">
-            <h2>My stuff, My thing &amp; Me</h2>
-          </section>
-
-          <section  data-transition="none">
-            <h2>My stuff, My thing, Me &amp; Other people</h2>
-
-            <article class="notes">
-              This is a crap visualisation
-            </article>
-          </section>
-        </section-->
-
+        </section> -->
 
         <section>
-          <!-- <section>
-            <h1>An Example</h1>
-          </section> -->
-
           <section>
             <img src="images/runkeeper.png" />
           </section>
-
-          <!-- <section>
-            <h2>Stuff - Runkeeper data</h2>
-            <h2>Something - Chart</h2>
-            <h2>Someone - Me</h2>
-          </section>
-
           <section>
-            <pre><code>
-    fetch('mydata.csv') // stuff
-      .then(renderChart) // something
-
-</code></pre>
-          </section> -->
-
+            <h1>activities.csv</h1>
+          </section>
         </section>
 
         <section>
           <section>
-            <h1>mydata.csv</h1>
+            <h1>Approach 1.</h1>
+            <h2 class="fragment">Download your data</h2>
+          </section>
+          <section><img src="images/runkeeper-export.png" /></section>
+          <section><img src="images/finder-runkeeper-export.png" /></section>
+          <section>
+            <ul class="points">
+              <!-- <li class="positive">Any user can get their data</li> -->
+              <li class="negative">No format options</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Approach 2.</h1>
+            <h2 class="fragment">Write a script</h2>
+          </section>
+          <section><img src="images/runkeeper-export-script.png" /></section>
+          <section>
+            <ul class="points">
+              <li class="positive">Any format we want</li>
+              <li class="negative">Requires coding knowledge</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Approach 3.</h1>
+            <h2 class="fragment">Build a website</h2>
+          </section>
+          <section>[website screenshot]</section>
+          <section>
+            <ul class="points">
+              <li class="positive">No coding necessary</li>
+              <li class="negative">Complex backend &amp; privacy issues</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1> </h1>
+            <h1>Approach 4.</h1>
+            <h2 class="fragment">Use the browser</h2>
+            <h1 class="fragment">🚀🌟🐎🐠✅</h1>
+          </section>
+
+          <section>[Server, browser, api diagram]</section>
+
+          <section>
+            <ul class="points">
+              <li class="positive">Data only stored by user</li>
+              <li class="positive">Simple backend</li>
+              <li class="negative">CSV file</li>
+            </ul>
           </section>
 
           <section>
-            <h2>1. Gather</h2>
-            <h2>2. Generate</h2>
+            <h1>Approach 4.b</h1>
+            <h2 class="fragment">+ Service workers</h2>
           </section>
 
           <section>
-            <h2>[1. script]</h2>
+            <pre><code class="javascript">navigator.serviceWorker.register('sw.js')</code></pre>
           </section>
 
           <section>
-            <h2>[bash listing fetch]</h2>
-          </section>
+            <pre><code class="javascript" data-trim>
 
-          <section>
-            <h2>[bash listing process]</h2>
-          </section>
+if(event.request.url.match(/sw\/hello\.txt$/)){
+  event.respondWith(
+    new Response( "Hello from your Service Worker", {
+      headers: { 'Content-Type': 'plain/text' }
+    })
+  )
+})
 
-          <section>
-            <h2>+ format choice</h2>
-            <h2>- sharing</h2>
+            </code></pre>
           </section>
+          <section>
+            <h1><a href="/sw/hello.txt" target="_blank">sw/hello.txt</a></h1>
+          </section>
+          <section>
+          <pre><code class="javascript" data-trim>
 
-          <section>
-            <h3>[2. web service]
-          </section>
-
-          <section>
-            <h3>[website screenshot]</h3>
-          </section>
-
-          <section>
-            <h3>+ openness</h3>
-            <h3>- waiting</h3>
-            <h3>- RTT (&rarr; server, &rarr; client)</h3>
-            <h3>- data storage/privacy</h3>
-          </section>
-
-          <section>
-            <h2>[3. proxy web service, client storage]
-          </section>
-
-          <section>
-            <h3>[website screenshot]</h3>
-          </section>
-
-          <section>
-            <h3>[website screenshot /data/url.json]</h3>
-            <aside class="notes">
-              instead of collecting all the data server side, we can provide a proxy
-              for the user to access their own data once they've logged in.
-            </aside>
-          </section>
-
-          <section>
-            <h3>[collection]</h3>
-            <code><pre>
-              fetch('data/fitnessActivity/xyz')
-                .then(function(d){ return d.json() })
-                .then(function(data){
-                  db.responses.add('data/fitnessActivity/xyz', data)
-                })
-            </pre></code>
-          </section>
-
-          <section>
-            <h3>[process]</h3>
-            <code><pre>
-              var csvStr = '';
-              db
-                .responses
-                .each(function(item){
-                  csvStr += toCSV(item);
-                })
-            </pre></code>
-          </section>
-
-          <section>
-            <h3>[serve]</h3>
-            <code><pre>
-              .on('fetch', function(e){
-                e.respondWith(
-                  process()
-                  .then(function(csvStr){
-                    return new Response(csvStr, {
-                      headers: { 'Content-Type': 'text/csv' }
-                    })
-                  })
-                )
-              })
-            </pre></code>
-          </section>
-
-          <section>
-            <h3>+ openness</h3>
-            <h3>+ waiting</h3>
-            <h3>+ async</h3>
-            <h3>+ data storage/privacy</h3>
-            <h3>++ my-data.csv?groupBy=month <!-- no additional request overhead + no server changes --></h3>
-          </section>
+if(event.request.url.match(/sw\/activities\.csv$/)){
+  event.respondWith(
+    generateCSVString()
+    .then(function(str){
+      return new Response( str, {
+        headers: { 'Content-Type': 'text/csv' }
+      })
+    })
+  )
+}
+          </code></pre>
 
         </section>
+
+        <section>
+          <h2>summary.csv</h2>
+          <h2 class="fragment">distances.csv</h2>
+          <h2 class="fragment">geo.json</h2>
+          <h2 class="fragment">paths.bin</h2>
+        </section>
+      </section>
 
 
         <section>
@@ -566,6 +541,24 @@
           </section>
         </section>
 
+
+        <section>
+          <section>
+            <!--
+              TODO: Conclusion
+
+              * Your data is nothing without you
+              * Know what
+
+              When you're creating something
+              * Think about people
+              * Think further than the chart
+
+            -->
+          </section>
+
+        </section>
+
       </div>
 
     </div>
@@ -594,7 +587,7 @@
         dependencies: [
           { src: 'bower_components/reveal.js/plugin/notes/notes.js', async: true },
           // { src: 'bower_components/reveal.js/plugin/math/math.js', async: true },
-
+          { src: 'bower_components/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 
           // Slide deps
           { src: 'components/dynamic-slide/dynamic-slide.js', async: false },
