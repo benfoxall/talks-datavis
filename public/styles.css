@@ -1,0 +1,53 @@
+path {
+  /*mix-blend-mode: overlay;*/
+}
+.reveal section {
+  padding:0 !important;
+}
+
+.reveal section img{
+  border:none;
+  box-shadow: none;
+}
+
+svg.runkeeper-duration text {
+  font-family: Gotham, arial;
+  font-size:22px;
+}
+svg.runkeeper-duration path {
+  stroke-width:1;
+  fill:none;
+  stroke: none;
+}
+svg.runkeeper-duration circle {
+  opacity: 1;
+}
+svg.runkeeper-duration .line {
+  stroke: #08f;
+  opacity: 0.5;
+}
+
+
+.runkeeper-paths path.activity {
+  stroke-width: 1px;
+  stroke: rgba(255, 150, 0, 0.8);
+  /*stroke: #f80;*/
+  stroke-linejoin: round;
+  fill: none;
+}
+.runkeeper-paths path.graticule {
+  stroke-width: 1px;
+  stroke: #ccc;
+  fill: none;
+}
+.runkeeper-paths circle.choice {
+  transition:opacity .5s;
+  opacity: 0.02;
+  cursor: pointer;
+}
+.runkeeper-paths circle.choice:hover {
+  opacity: .6
+}
+.runkeeper-paths .vis {
+  min-height:600px;
+}
