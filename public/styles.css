@@ -83,3 +83,12 @@ svg.runkeeper-duration .line {
   background: rgba(88, 255, 63, 0.8);
   background: #0f8;
 }
+
+.bang-fragments .fragment {
+  opacity: 0;
+  font-size: 0%;
+}
+.bang-fragments .fragment.visible {
+  opacity: 1;
+  font-size: 100%;
+}
