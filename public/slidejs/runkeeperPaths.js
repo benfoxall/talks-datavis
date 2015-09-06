@@ -155,7 +155,7 @@
             .style('opacity', .7)
             .attr('transform', function(d, i) {
               var l = d.properties.layout;
-              console.log(l)
+              // console.log(l)
               return 'translate(' + w/2 + ',' + h/2 + ') scale(2)'
             })
         }, function(){
@@ -215,6 +215,8 @@
         }
       ].concat(groups.map(function(g, i){
         return function(){
+          console.log("GROUP{", g)
+
           activities
             .transition()
             // .delay(function(d,i){return i*tt})
