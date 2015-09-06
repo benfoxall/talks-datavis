@@ -17,7 +17,7 @@ node index.js
 * http://www.slideshare.net/AmandaMakulec/session103-design-final - good preattentive description
 * http://www.csc.ncsu.edu/faculty/healey/PP/ - flicker of images
 * https://github.com/vizicities/vizicities/tree/0.2.0/examples/gpx-example - visicities GPX
-
+* https://gist.github.com/benfoxall/be1b1827978a64b7b40d - runkeeper export script
 
 
 * https://disordertc.wordpress.com/2014/06/15/35-anni-di-unknown-plaeasures/ - pulsar image source
