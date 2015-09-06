@@ -23,40 +23,6 @@
       var M = Matrix.I(3),
         drawn = false;
 
-      // set view of the globe based on mouse/touch position
-      function setView(x,y){
-
-        var a = Matrix.RotationY(x/100);
-        var b = Matrix.RotationX(-y/100);
-
-        M = a.x(b);
-        drawn = false;
-      }
-      //
-      // var handlers = {
-      //   touch:function(e){
-      //     //e.preventDefault();
-      //
-      //     var x = e.touches[0].pageX;
-      //     var y = e.touches[0].pageY;
-      //     setView(x,y);
-      //   },
-      //   mouse:function(e){
-      //     e.preventDefault();
-      //
-      //     var x = e.clientX;
-      //     var y = e.clientY;
-      //     setView(x,y);
-      //
-      //   }
-      // };
-
-
-      // window.addEventListener("mousemove",  handlers.mouse, false);
-      // window.addEventListener("touchmove",  handlers.touch, false);
-      // window.addEventListener("touchstart", handlers.touch, false);
-
-
       // map the lat/lngs into cartesian coords and the
       // extend of the hist bar
       var vectors = data.map(function(point){
@@ -86,8 +52,6 @@
         requestAnimationFrame(render);
 
         TWEEN.update();
-
-        // console.log('r')
 
         // only draw if the transform matrix has changed
         if(drawn) return;
@@ -121,14 +85,14 @@
       };
 
       // uk in view
-      var state = {x: -0.88, y: 3.8};
+      var state = {x: -0.88, y: 3.8, zoom: 1};
 
       var update = function(){
 
         var a = Matrix.RotationY(this.y);
         var b = Matrix.RotationX(this.x);
 
-        M = a.x(b);
+        M = a.x(b).x(this.zoom || 1);
         drawn = false;
       }
 
@@ -142,7 +106,6 @@
         .yoyo(true)
   			.onUpdate(update)
 
-
       var slide = new DynamicSlide(el);
       slide.addEventListener('shown', function(){
         t.start()
@@ -150,16 +113,23 @@
         requestAnimationFrame(render);
       })
 
+      slide.fragments([function(){
+        t.stop();
+        new TWEEN.Tween(state)
+          .to( {zoom:0.00001, y:5}, 1000 )
+          .easing(TWEEN.Easing.Quadratic.In)
+          .onUpdate(update)
+          .start()
+          .onComplete(Reveal.next)
+      }])
+
       slide.addEventListener('hidden', function(){
-        t.stop()
+        t.stop();
         rendering = false
         cancelAnimationFrame(render);
       })
 
-
     })
-
-
 
   }
 
