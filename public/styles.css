@@ -51,3 +51,35 @@ svg.runkeeper-duration .line {
 .runkeeper-paths .vis {
   min-height:600px;
 }
+
+
+.heading-1, .heading-2, .heading-3, .heading-4 {
+  color: #fff;
+  display: inline-block;
+  padding: .5em 2em !important;
+  margin: -0.28em !important;
+  /* opacity: 0.7; */
+  /* transform: rotateY(20deg); */
+  /*transition: transform 1s;*/
+  /*mix-blend-mode: color;*/
+}
+
+.heading-1 {
+  /*background: rgba(255, 56, 199, 0.8);*/
+  background: #08f;
+  background: #f08;
+  /*transform: rotateY(10deg) translate3d(0,0,-20px);*/
+}
+.heading-2 {
+  background: rgba(43, 251, 255, 0.8);
+
+  background: #08f;
+}
+.heading-3 {
+  background: rgba(248, 255, 38, 0.8);
+  background: #80f;
+}
+.heading-4 {
+  background: rgba(88, 255, 63, 0.8);
+  background: #0f8;
+}
