@@ -81,16 +81,16 @@
               .attr('r', 0)
               .remove()
           },
-          function(){
-            map
-              .style('fill', '#fff')
-              // .attr('transform', 'rotate(0, ' + w/2 + ', '+ h/2 +')')
-              .transition()
-              .duration(2000)
-              .attr('transform', 'rotate(-90, ' + w/2 + ', '+ h/2 +')')
-              .transition()
-              .style('fill', '#000')
-          }
+          // function(){
+          //   map
+          //     .style('fill', '#fff')
+          //     // .attr('transform', 'rotate(0, ' + w/2 + ', '+ h/2 +')')
+          //     .transition()
+          //     .duration(2000)
+          //     .attr('transform', 'rotate(-90, ' + w/2 + ', '+ h/2 +')')
+          //     .transition()
+          //     .style('fill', '#000')
+          // }
         ])
       });
     });

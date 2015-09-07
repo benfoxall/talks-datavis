@@ -29,7 +29,7 @@
 
 
 
-    fetch('sw/geo.json')
+    fetch('sw/geo.simple.json')
       .then(function(res){
         return res.json()
       })

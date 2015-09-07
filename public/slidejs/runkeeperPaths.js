@@ -147,6 +147,8 @@
 
 
       slide.fragments([
+
+        // draw in centre
         function(){
           activities
             .transition()
@@ -158,27 +160,38 @@
               // console.log(l)
               return 'translate(' + w/2 + ',' + h/2 + ') scale(2)'
             })
-        }, function(){
+        },
+
+        // spread out
+        function(){
           activities
             .transition()
             .delay(function(d,i){return i*tt})
             .duration(dur)
             .style('opacity', 1)
             .attr('transform', function(d, i) {
-              return 'translate(' + x(i) + ',' + h/2 + ') scale(1.4) rotate(10)'
+              var l = d.properties.layout;
+              return 'translate(' + l.x + ',' + l.y + ') scale(1.5)'
+              // return 'translate(' + x(i) + ',' + h/2 + ') scale(1.4) rotate(10)'
             })
-        }, function(){
+        },
+
+        // make smaller
+        function(){
           activities
             .transition()
             .delay(function(d,i){return i*tt})
             .duration(dur)
             .style('opacity', 1)
             .attr('transform', function(d, i) {
-              var y = i % 2 ? h/3 : 2*h/3;
-              var r = i % 2 ? 20 : 0;
-              return 'translate(' + x(i) + ',' + y + ') scale(1) rotate(' + r + ')'
+              var l = d.properties.layout;
+              return 'translate(' + l.x + ',' + l.y + ') scale(.5) rotate(10)'
+              // return 'translate(' + x(i) + ',' + h/2 + ') scale(1.4) rotate(10)'
             })
-        }, function(){
+        },
+
+        // colour by group
+        function(){
           activities
             .transition()
             .delay(function(d,i){return i*tt})
@@ -187,16 +200,47 @@
             .style('stroke', function(d, i) {
               return colours(d.properties.group.id)
             })
-        }, function(){
+        },
+
+
+
+        // move into groups
+        function(){
           activities
             .transition()
             .delay(function(d,i){return i*tt})
             .duration(dur)
             .style('opacity', 1)
             .attr('transform', function(d, i) {
-              return 'translate(' + xg(d.properties.group.id) + ',' + h/2 + ') scale(.5) rotate(0)'
+              var l = d.properties.group;
+              return 'translate(' + l.x + ',' + l.y + ') scale(.8)'
+              // return 'translate(' + x(i) + ',' + h/2 + ') scale(1.4) rotate(10)'
             })
-        }, function(){
+        },
+
+        // function(){
+        //   activities
+        //     .transition()
+        //     .delay(function(d,i){return i*tt})
+        //     .duration(dur)
+        //     .style('opacity', 1)
+        //     .attr('transform', function(d, i) {
+        //       var y = i % 2 ? h/3 : 2*h/3;
+        //       var r = i % 2 ? 20 : 0;
+        //       return 'translate(' + x(i) + ',' + y + ') scale(1) rotate(' + r + ')'
+        //     })
+        // },
+        // function(){
+        //   activities
+        //     .transition()
+        //     .delay(function(d,i){return i*tt})
+        //     .duration(dur)
+        //     .style('opacity', 1)
+        //     .attr('transform', function(d, i) {
+        //       return 'translate(' + xg(d.properties.group.id) + ',' + h/2 + ') scale(.5) rotate(0)'
+        //     })
+        // },
+        function(){
           activities
             .transition()
             .delay(function(d,i){return i*tt})
@@ -213,41 +257,45 @@
               return path(d);
             })
         }
-      ].concat(groups.map(function(g, i){
+      ]
+      .concat(groups.map(function(g, i){
         return function(){
-          console.log("GROUP{", g)
+          console.log("GROUP ", g, i)
 
           activities
             .transition()
-            // .delay(function(d,i){return i*tt})
-            .duration(500)
-            .style('opacity', 0.7)
+            .delay(function(d,i){return Math.random() * 2000})
+            .duration(700)
+            .style('opacity', function(d){return d.properties.group.id == i ? (i == 0 ? 0.5 : 1) : 0})
             .attr('transform', function(d) {
 
               var _x = d.properties.group.id < i ? -100 :
                       d.properties.group.id > i ? w+100 :
                       w/2;
 
+              _x = w/2;
+
               var s = d.properties.group.id == i ? 1.5 : 0.2;
 
               return 'translate(' + _x + ',' + h/2 + ') scale('+s+') rotate(0)'
             })
         }
+      }).filter(function(d, i){
+        if(i === 0 || i === 9) return true
       })
-      .concat([
-        function(){
-          activities
-            .transition()
-            .delay(function(d,i){return i*tt})
-            .duration(dur)
-            .attr('transform', function(d, i) {
-              var g = d.properties.group;
-              return 'translate(' + g.x + ',' + g.y + ') scale(.5)'
-            })
-
-        }
-
-      ])
+      // .concat([
+      //   function(){
+      //     activities
+      //       .transition()
+      //       .delay(function(d,i){return i*tt})
+      //       .duration(dur)
+      //       .attr('transform', function(d, i) {
+      //         var g = d.properties.group;
+      //         return 'translate(' + g.x + ',' + g.y + ') scale(.5)'
+      //       })
+      //
+      //   }
+      // ])
     )
 
 
