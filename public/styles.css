@@ -94,6 +94,18 @@ svg.runkeeper-duration .line {
 }
 
 
+.bang-fragments-v .fragment {
+  opacity: 0;
+  /*font-size: 0%;*/
+  transform: scale(0.1)
+}
+.bang-fragments-v .fragment.visible {
+  opacity: 1;
+  /*font-size: 100%;*/
+  transform: scale(1)
+}
+
+
 .nines.highlight td {
   opacity: 0.4;
   transition: all 1s;
@@ -104,3 +116,27 @@ svg.runkeeper-duration .line {
   color: red;
   /*font-weight: 800;*/
 }
+
+
+
+
+
+svg.calendar {
+  font: 10px Gotham, sans-serif;
+  shape-rendering: crispEdges;
+}
+
+.calendar .day {
+  fill: #fff;
+  stroke: #eee;
+  /*stroke-width: 2px;*/
+}
+
+.calendar .month {
+  fill: none;
+  stroke: #aaa;
+  stroke-width: 2px;
+}
+
+
+.reveal .badges img{height: 170px; padding-right: 40px;margin-top: 80px}

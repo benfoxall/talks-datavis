@@ -12,20 +12,6 @@
       }
 
       value(Math.round(distance/1000).toLocaleString() + ' km')
-
-      // value(distance + ' m');
-      //
-      // var slide = new DynamicSlide(el);
-      //
-      // slide.fragments([
-      //   function(){
-      //     value(distance.toLocaleString() + ' m')
-      //   },
-      //   function(){
-      //     value(Math.round(distance/1000).toLocaleString() + ' km')
-      //   }
-      // ])
-
     })
   }
 

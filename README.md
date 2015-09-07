@@ -4,6 +4,9 @@ Talk for reasons.to
 
 ## Running
 
+** This is pretty hard to run at the moment, you might be able to hack your way
+though, but give me a shout and I can take you through it **
+
 node index.js
 
 
