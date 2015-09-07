@@ -92,3 +92,19 @@ svg.runkeeper-duration .line {
   opacity: 1;
   font-size: 100%;
 }
+
+
+.nines td {
+
+}
+
+.nines.highlight td {
+  opacity: 0.4;
+  transition: all 1s;
+}
+
+.nines.highlight td.nines-num-9 {
+  opacity: 1;
+  color: red;
+  /*font-weight: 800;*/
+}
