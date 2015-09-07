@@ -273,17 +273,97 @@
     },
     function() {
 
-      // zoom out to see the whole UK, facing scotland
+      // zoom out to see the whole UK, facing canada
       TWEEN.removeAll()
       new TWEEN.Tween(view)
         .easing( TWEEN.Easing.Quadratic.InOut )
         .to({
-          radius: 54225.7126843239, phi: 1.10429897311243, theta: 1.13162192531485
+          // radius: 94225.7126843239, phi: 1.10429897311243, theta: 1.13162192531485
+          radius: 276677.421679355, phi: 0.738014627850838, theta: 2.16110789002187
         }, 5000)
         .onUpdate(renderView)
       .start()
 
     },
+
+    function() {
+
+      // Go to canada
+      TWEEN.removeAll()
+      new TWEEN.Tween(view)
+        .easing( TWEEN.Easing.Quadratic.InOut )
+        .to({
+          lng: -116.97, lat: 51.3, alt: 878,
+          radius: 3358.95182203151, phi: 0.262974376085244, theta: -0.336225805009344
+          // radius: 54225.7126843239, phi: 1.10429897311243, theta: 1.13162192531485
+        }, 5000)
+        .onUpdate(renderView)
+        .chain(
+          new TWEEN.Tween(view)
+            .easing( TWEEN.Easing.Quadratic.InOut )
+            .to({
+              radius: 2345.68133310664, phi: 1.55905744393394, theta: -0.75466203582576
+            }, 5000)
+            .onUpdate(renderView)
+        )
+
+      .start()
+
+    },
+
+
+    function() {
+
+      // Go to canada airport
+      TWEEN.removeAll()
+      new TWEEN.Tween(view)
+        .easing( TWEEN.Easing.Quadratic.InOut )
+        .to({
+          lng: -114, lat: 51.132, alt: 1087,
+          radius: 3358, phi: 0.01, theta: -1.336225805009344
+        }, 5000)
+        .onUpdate(renderView)
+
+
+      .start()
+
+    },
+
+
+
+    function() {
+
+      // Zoom way out
+      TWEEN.removeAll()
+      new TWEEN.Tween(view)
+        .easing( TWEEN.Easing.Quadratic.InOut )
+        .to({
+          radius: 5418530.59889526, phi: 0.000001, theta: -0.891222194458569
+        }, 5000)
+        .onUpdate(renderView)
+
+
+      .start()
+
+    },
+
+
+    function() {
+
+      // dollar glen high up
+      TWEEN.removeAll()
+      new TWEEN.Tween(view)
+        .easing( TWEEN.Easing.Quadratic.InOut )
+        .to({
+          lng: -3.67786, lat: 56.171183, alt: 198,
+          radius: 3418530,
+        }, 5000)
+        .onUpdate(renderView)
+        .start();
+
+
+    },
+
     function() {
 
       // dollar glen

@@ -107,13 +107,14 @@ svg.runkeeper-duration .line {
 
 
 .nines.highlight td {
-  opacity: 0.4;
+  opacity: 0.3;
   transition: all 1s;
 }
 
 .nines.highlight td.nines-num-9 {
   opacity: 1;
   color: red;
+  transform:scale(1.2);
   /*font-weight: 800;*/
 }
 
