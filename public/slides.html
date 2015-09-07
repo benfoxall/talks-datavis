@@ -31,7 +31,12 @@
 
       <div class="slides">
         <section>
-          <h1>Your data and you</h1>
+          <section>
+            <h1>Your data and you</h1>
+          </section>
+          <section>
+            <h1>&lt;code/&gt;</h1>
+          </section>
         </section>
 
         <section>
@@ -292,7 +297,7 @@
           </section>
 
           <section>
-            <h3>How do we give people access to the data they produce?</h3>
+            <h3>How do we get access to our data?</h3>
           </section>
 
           <section>
@@ -532,12 +537,25 @@ if(event.request.url.match(/sw\/activities\.csv$/)){
         </section>
 
         <section>
-          <h2>summary.csv</h2>
-          <h2 class="fragment">activities.csv</h2>
+          <h2>activities.csv</h2>
+          <h2 class="fragment">activities.json</h2>
           <h2 class="fragment">geo.json</h2>
           <h2 class="fragment">paths.bin</h2>
         </section>
+
+        <section>
+          <pre><code class="javascript" data-trim>
+fetch('/sw/activities.json')
+  .then(toJSON)
+  .then(render)
+          </code></pre>
+        </section>
+
       </section>
+
+      <!-- <section>
+        <section><h2>The brilliant bit</h2></section>
+      </section> -->
 
 
       <section>
@@ -646,6 +664,13 @@ if(event.request.url.match(/sw\/activities\.csv$/)){
           </section> -->
 
           <section>
+            <ul class="points">
+              <li class="negative">Data ink ratio</li>
+              <li class="negative">Equirectangular projection</li>
+            </ul>
+          </section>
+
+          <section>
             <h1>d3.geo</h1>
           </section>
 
@@ -700,7 +725,18 @@ if(event.request.url.match(/sw\/activities\.csv$/)){
 
         <section>
           <section>
-            <h1><span class="heading-4">You and Your Data</span></h1>
+            <h1><span class="heading-4" style="font-size:85%">You and Your Data</span></h1>
+          </section>
+
+          <section>
+            <img src="images/leeb.jpg" />
+            <aside class="notes">
+              Lee Byron 2006
+            </aside>
+          </section>
+
+          <section>
+            <img src="images/leeb-more.jpg" class="stretch" />
           </section>
 
           <section>
@@ -708,6 +744,7 @@ if(event.request.url.match(/sw\/activities\.csv$/)){
             of the big data now, but we can get more from it by appreciating
             how it relates to us]
           </section>
+          
         </section>
 
 
