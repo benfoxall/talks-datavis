@@ -148,3 +148,13 @@ svg.calendar {
 #jsoxford-old img{width:500px;heigxht:500px}
 
 button{margin:1em;font-size:1.5em}#jsoxford svg{width:500px;height:500px}#jsoxford g,#jsoxford path,#jsoxford polygon{-webkit-transition:all 1s;transition:all 1s}.jo-standard-horse{-webkit-transform:translate(-300px,0);-ms-transform:translate(-300px,0);transform:translate(-300px,0)}.jo-standard-horse.on{-webkit-transform:translate(0);-ms-transform:translate(0);transform:translate(0)}.jo-wbar-1,.jo-wbar-2{-webkit-transform-origin:0 800px;-ms-transform-origin:0 800px;transform-origin:0 800px;opacity:0}.jo-wbar-1.on,.jo-wbar-2.on{-webkit-transform:none;-ms-transform:none;transform:none;opacity:.9}.jo-wbar-1{-webkit-transform:rotate(-30deg);-ms-transform:rotate(-30deg);transform:rotate(-30deg)}.jo-wbar-2{-webkit-transform:rotate(30deg);-ms-transform:rotate(30deg);transform:rotate(30deg)}.jo-cbar-1,.jo-cbar-2{-webkit-transform-origin:257px 175px;-ms-transform-origin:257px 175px;transform-origin:257px 175px;opacity:0}.jo-cbar-1.on,.jo-cbar-2.on{-webkit-transform:none;-ms-transform:none;transform:none;opacity:1}.jo-cbar-1{-webkit-transform:rotate(-40deg);-ms-transform:rotate(-40deg);transform:rotate(-40deg)}.jo-cbar-2{-webkit-transform:rotate(10deg);-ms-transform:rotate(10deg);transform:rotate(10deg)}.jo-cbar-3,.jo-cbar-4,.jo-cbar-5{-webkit-transform-origin:257px 175px;-ms-transform-origin:257px 175px;transform-origin:257px 175px;opacity:0}.jo-cbar-3.on,.jo-cbar-4.on,.jo-cbar-5.on{-webkit-transform:none;-ms-transform:none;transform:none;opacity:1}.jo-cbar-3{-webkit-transform:rotate(-40deg);-ms-transform:rotate(-40deg);transform:rotate(-40deg)}.jo-cbar-4{-webkit-transform:rotate(10deg);-ms-transform:rotate(10deg);transform:rotate(10deg)}.jo-cbar-5{-webkit-transform:rotate(-10deg);-ms-transform:rotate(-10deg);transform:rotate(-10deg)}/*#wologo{width:500px;height:289px}*/#wologo g,#wologo path,#wologo polygon{-webkit-transition:all 2s;transition:all 2s;-webkit-transform-origin:50%;-ms-transform-origin:50%;transform-origin:50%}
+
+
+
+
+.points .positive {
+  color:green
+}
+.points .negative {
+  color:red
+}
