@@ -77,7 +77,81 @@
               <polygon fill="#fff" points="86.4,0 57.6,0 57.6,0 72,24.9  "/>
               <polygon fill="#fff" points="72,24.9 86.4,49.9 100.8,24.9  "/>
             </svg>
+            <div id="month-a">
+                🌨
+            </div>
+            <div id="month-b">
+                P
+            </div>
           </section>
+
+          <style media="screen">
+              #wologo svg, #wologo div {
+                  transition: all .5s;
+              }
+              /* this is officially how you CSS */
+              #month-a {
+                    opacity: 0;
+                    left: 50%;
+                    position: absolute;
+                    font-size: 200px;
+                    top: 50%;
+                    width: 200px;
+                    height: 203px;
+                    margin-top: -130px;
+                    margin-left: -100px;
+                    transform: scale(0.3);
+              }
+              #month-b {
+                    opacity: 0;
+                    left: 80%;
+                    position: absolute;
+                    font-size: 200px;
+                    top: 50%;
+                    width: 200px;
+                    height: 203px;
+                    margin-top: -130px;
+                    margin-left: -100px;
+                    transform: translateX(300px);
+              }
+
+              .step-a svg{
+                  transform: scale(0.3);
+              }
+
+              .step-b svg{
+                  transform: scale(0.3);
+                  transform-origin: 0 50%;
+              }
+
+              .step-b #month-a {
+                  opacity: 1;
+                  transform: scale(1);
+              }
+
+              .step-c svg{
+                  transform: scale(0.3);
+                  transform-origin: 0 50%;
+              }
+
+              .step-c #month-a {
+                  opacity: 1;
+                  transform: scale(1);
+              }
+              .step-c #month-b {
+                  opacity: 1;
+                  transform: scale(1);
+              }
+
+              .exit #month-a {
+                  opacity: 0;
+                  transform: scale(0.01);
+              }
+              .exit #month-b {
+                  opacity: 0;
+                  transform: translateX(300px);
+              }
+          </style>
 
           <!-- <section id="jsoxford-old">
             <img src="img/jsoxford.png" />

@@ -54,6 +54,8 @@
         Reveal.next();
       }, 1500)
 
+      el.classList.add('exit');
+
     }
 
 
@@ -87,7 +89,20 @@
 
     var slide = new DynamicSlide(this.element);
 
-    slide.fragments([exit])
+    var el = this.element;
+
+    slide.fragments([
+    function(){
+        el.classList.add('step-a');
+    },
+    function(){
+        el.classList.add('step-b');
+    },
+    function(){
+        el.classList.add('step-c');
+    },
+    exit
+    ])
 
 
     slide.addEventListener('shown', function(){
