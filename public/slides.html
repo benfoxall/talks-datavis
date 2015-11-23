@@ -205,10 +205,19 @@
         </section-->
 
         <section>
-          <section data-background="#fff">
+
+          <section>
+            <img src="images/runkeeper.png" />
+          </section>
+
+          <section>
+            <img src="images/healthgraph.png"  style="background-color:#444;padding:1em;border-radius:1em"/>
+          </section>
+
+          <section>
             <!-- <h1>[overview]</h1> -->
             <h3><span class="heading-1">visualisation</span></h3>
-            <h3><span class="heading-2">Us and our data</span></h3>
+            <h3><span class="heading-2">Getting data</span></h3>
             <h3><span class="heading-3">visualising data</span></h3>
             <h3><span class="heading-4">your data and you</span></h3>
           </section>
@@ -246,7 +255,7 @@
 
         <section>
           <section>
-            <h1>Reasons to visualise</h1>
+            <h1>Why Visualise</h1>
           </section>
         </section>
 
@@ -403,7 +412,7 @@
 
         <section>
           <section>
-            <h1><span class="heading-2">Us and our Data</span></h1>
+            <h1><span class="heading-2">Getting data</span></h1>
 
             <!--
             THE POINT
@@ -430,11 +439,11 @@
             -->
           </section>
 
-          <section>
+          <!-- <section>
             <h3>How do we get access to our data?</h3>
-          </section>
+          </section> -->
 
-          <section>
+          <!-- <section>
             <h3>The depressing answer&hellip;</h3>
             <aside class="notes">
               <p>&hellip; we can't.</p>
@@ -442,7 +451,7 @@
               <p>With smart devices pushing straight up</p>
               <p>A lot of our data is gone forever</p>
             </aside>
-          </section>
+          </section> -->
 
           <!-- <section>
             <h2>give us what we want</h2>
@@ -526,7 +535,7 @@
 
         </section>
 
-        <!-- <section>
+        <section>
           <section><img src="images/fitbit.png" /></section>
           <section><img src="images/finder-fitbit-csv.png" /></section>
           <section>
@@ -540,9 +549,9 @@
           <section>
             <h1>"Body Type": null</h1>
           </section>
-        </section> -->
+        </section>
 
-        <section>
+        <!-- <section>
           <section>
             <h3>&hellip;but</h3>
             <h4 class="fragment">we have choices</h4>
@@ -558,13 +567,10 @@
           <section>
             <img src="images/healthgraph.png"  style="background-color:#444;padding:1em;border-radius:1em"/>
           </section>
-          <!-- <section>
-            <h2>How do I give people access to their runkeeper data?</h2>
-          </section> -->
-        </section>
+        </section> -->
 
         <section>
-          <h2>Getting our data</h2>
+          <h1>csv</h1>
         </section>
 
         <section>
@@ -609,7 +615,7 @@
             <img src="images/app-downloading.png" class="stretch" />
           </section>
 
-          <section><h2>
+          <section><h2 style="font-size:120%">
             api &larr; web server &larr; browser
           </h2></section>
 
@@ -638,7 +644,7 @@
           </section>
 
 
-          <section><h2 class="bang-fragments">
+          <section><h2 class="bang-fragments" style="font-size:90%">
             api &larr; web server &larr; browser <span class="fragment">&rarr; api</span>
           </h2></section>
 
@@ -752,13 +758,13 @@ fetch('/sw/activities.json')
           </section>
 
           <section>
-            <code><pre>
-              fetch('summary.json')
-                .then(function(res){return res.json()})
-                .then(function(summary){
-                  document.getElementById('distance').innerText = summary.distance
-                })
-            </pre></code>
+            <pre><code class="javascript" data-trim>
+fetch('summary.json')
+  .then(function(res){return res.json()})
+  .then(function(summary){
+    document.getElementById('distance').innerText = summary.distance
+  })
+</code></pre>
           </section>
 
           <section data-slide-script="runkeeperSummary">
@@ -919,7 +925,7 @@ fetch('/sw/paths.binary')
           </section> -->
 
           <section class="bang-fragments">
-            <h3>
+            <h3 style="font-size:90%">
               <span class="fragment" data-fragment-index="3">Humans &rarr;</span>
               <span class="fragment" data-fragment-index="1">Data &rarr;</span>
               Pictures
@@ -996,8 +1002,12 @@ fetch('/sw/paths.binary')
         history: true,
         center: true,
 
-        width: 1280,
-        height: 720,
+        // width: 1280,
+        // height: 720,
+
+        // 4:3
+        width: 1024,
+        height: 768,
 
         margin: 0,
 
