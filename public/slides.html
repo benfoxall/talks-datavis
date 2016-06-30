@@ -168,18 +168,6 @@
           </section>
         </section>
 
-        <!--section>
-          <section>
-            <h1>[intro]</h1>
-          </section>
-          <section>
-            <img src="images/Last.fm_Logo_Black.png" height="100"/>
-          </section>
-          <section>
-            <h2>[@benjaminbenben lastfm]</h2>
-          </section>
-        </section-->
-
         <section>
 
           <section>
@@ -550,7 +538,7 @@
           <div class="left">
             <h2>As a runner,</h2>
             <h2>I want my data as a CSV file,</h2>
-            <h2>So that I can explore it</h2>
+            <h2>So that I can turn it into pictures</h2>
           </div>
         </section>
 
@@ -584,6 +572,7 @@
             <h3>👌</h3>
             <ul>
               <li class="fragment">Any format we want</li>
+              <li class="fragment">Shared with the world</li>
             </ul>
 
             <h3 class="fragment">❌</h3>
@@ -605,6 +594,10 @@
           <section>
             <img src="images/app-downloading.png" class="stretch" />
           </section>
+
+          <!-- <section>
+            <img src="images/arch-A.png" class="stretch" />
+          </section> -->
 
           <section><h2 style="font-size:120%">
             api &larr; web server &larr; browser
@@ -633,12 +626,12 @@
           </section>
 
 
-          <section>
+          <!-- <section>
             <img src="images/rk-data-1.png" class="stretch" />
           </section>
           <section>
             <img src="images/rk-data-2.png" class="stretch" />
-          </section>
+          </section> -->
 
           <!-- <section>
             <img src="images/app-login.png" class="stretch" />
@@ -653,8 +646,12 @@
             api &larr; web server &larr; browser <span class="fragment">&rarr; api</span>
           </h2></section>
 
+          <section data-background="images/arch-A.png" data-background-size="contain"></section>
 
-          <section>
+          <section data-background="images/arch-B.png" data-background-size="contain"></section>
+
+
+          <!-- <section>
             <pre><code class="javascript" data-trim>
 
 fetch('http://api.runkeeper.com/activities?token=TOKEN')
@@ -664,7 +661,7 @@ fetch('http://api.runkeeper.com/activities?token=TOKEN')
   })
 
             </code></pre>
-          </section>
+          </section> -->
 
 
           <section class="good-bad">
@@ -677,11 +674,21 @@ fetch('http://api.runkeeper.com/activities?token=TOKEN')
 
             <h3 class="fragment">❌</h3>
             <ul>
-              <li class="fragment">CSV file</li>
+              <li class="fragment"><span class="fragment highlight-strikethrough">"Trapped in JavaScript"</span></li>
             </ul>
           </section>
 
-          <section>
+<style media="screen">
+
+          .reveal .slides section .fragment.highlight-strikethrough {
+            opacity: 1;
+            visibility: visible; }
+
+          .reveal .slides section .fragment.highlight-strikethrough.visible {
+            text-decoration: line-through; }
+</style>
+
+          <!-- <section>
             <h1>Approach 4.b</h1>
             <h2 class="fragment">+ Service workers</h2>
           </section>
@@ -721,9 +728,9 @@ if(event.request.url.match(/sw\/activities\.csv$/)){
 }
           </code></pre>
 
-        </section>
+        </section>-->
 
-        <section>
+        <!-- <section>
           <img src="images/rk-data-3.png" class="stretch" />
         </section>
 
@@ -744,13 +751,25 @@ fetch('/sw/activities.json')
   .then(toJSON)
   .then(render)
           </code></pre>
-        </section>
+        </section> -->
 
       </section>
 
       <!-- <section>
         <section><h2>The brilliant bit</h2></section>
       </section> -->
+
+      <section>
+
+        <section>
+          <h2>Let's build a browser based data collection tool</h2>
+        </section>
+
+        <section>
+          <h3>…todo</h3>
+        </section>
+
+      </section>
 
 
       <section>
