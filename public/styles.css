@@ -1,6 +1,26 @@
 path {
   /*mix-blend-mode: overlay;*/
 }
+
+.reveal {
+	font-family: 'Proxima Nova', Helvetica, sans-serif;
+	/*font-size: $mainFontSize;*/
+}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: 'Proxima Nova', Helvetica, sans-serif;
+  text-transform: none;
+}
+
+.reveal a {
+  font-family: 'Realtime Text', monospace;
+  color: #3B454A; // pusher blue
+}
+
 .reveal section {
   padding:0 !important;
 }
@@ -8,6 +28,11 @@ path {
 .reveal section img{
   border:none;
   box-shadow: none;
+}
+
+.reveal section .left{
+  text-align: left;
+  padding-left: 2em
 }
 
 svg.runkeeper-duration text {
@@ -53,7 +78,7 @@ svg.runkeeper-duration .line {
 }
 
 
-.heading-1, .heading-2, .heading-3, .heading-4 {
+.heading-1, .heading-2, .heading-3, .heading-4, .heading-5 {
   color: #fff;
   display: inline-block;
   padding: .5em 2em !important;
@@ -72,7 +97,6 @@ svg.runkeeper-duration .line {
 }
 .heading-2 {
   background: rgba(43, 251, 255, 0.8);
-
   background: #08f;
 }
 .heading-3 {
@@ -81,7 +105,12 @@ svg.runkeeper-duration .line {
 }
 .heading-4 {
   background: rgba(88, 255, 63, 0.8);
-  background: #0f8;
+  background: #59E24C;
+}
+
+.heading-5 {
+  background: rgba(88, 255, 63, 0.8);
+  background: #FF9E00;
 }
 
 .bang-fragments .fragment {
@@ -151,10 +180,21 @@ button{margin:1em;font-size:1.5em}#jsoxford svg{width:500px;height:500px}#jsoxfo
 
 
 
+h3 + .points {
+  background: red;
+}
 
 .points .positive {
   color:green
 }
 .points .negative {
   color:red
+}
+
+.good-bad h3{
+  margin-top: 2em;
+}
+
+.good-bad ul {
+  list-style: none;
 }
