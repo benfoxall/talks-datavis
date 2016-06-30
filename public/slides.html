@@ -32,10 +32,7 @@
       <div class="slides">
         <section>
           <section>
-            <h1>Your data and you</h1>
-          </section>
-          <section>
-            <h1>&lt;code&gt;</h1>
+            <h1>Using browsers to visualise data</h1>
           </section>
         </section>
 
@@ -46,6 +43,7 @@
 
 
           <section>
+            <p><a href="http://pusher.com">pusher.com</a></p>
             <img src="images/pusher_logo_p_dark.svg" class="stretch"/>
           </section>
           <!-- <section id="jsoxford-old">
@@ -151,11 +149,9 @@
           </section>
 
           <section>
-            <h1>🌞🔚⏩️📢🍹🎉🍖🆙🚀🍠</h1>
-          </section>
-
-          <section data-xbackground="img/soh.png" data-background-size="contain" style="text-align:center">
+            <p><a href="https://summerofhacks.io">summerofhacks.io</a></p>
             <img src="images/soh.svg" class="stretch" />
+
           </section>
 
 
@@ -185,17 +181,18 @@
 
           <section>
             <!-- <h1>[overview]</h1> -->
-            <h3><span class="heading-1">visualisation</span></h3>
+            <h3><span class="heading-1">Visualisation</span></h3>
             <h3><span class="heading-2">Getting data</span></h3>
-            <h3><span class="heading-3">visualising data</span></h3>
-            <h3><span class="heading-4">your data and you</span></h3>
+            <h3><span class="heading-3">Drawing data</span></h3>
+            <h3><span class="heading-4">Being personal</span></h3>
+            <h3><span class="heading-5">Being generative</span></h3>
           </section>
         </section>
 
 
         <section>
           <section>
-            <h1><span class="heading-1">visualisation</span></h1>
+            <h1><span class="heading-1">Visualisation</span></h1>
 
             <!--
             PURPOSE
@@ -230,7 +227,7 @@
 
         <section>
           <section>
-            <h2>for the Humans</h2>
+            <h2>for the humans</h2>
 
             <aside class="notes">
               You're helping a person understand Something
@@ -253,7 +250,7 @@
           </section>
 
           <section>
-            <h1>Preattentive Attributes</h1>
+            <h1>Preattentive attributes</h1>
           </section>
           <section>
             <table class="nines" data-slide-script="nines">
@@ -297,7 +294,7 @@
 
         <section>
           <section>
-            <h2>for the Data</h2>
+            <h2>for the data</h2>
 
             <aside class="notes">
               You're focused on making that thing as clear as possible
@@ -329,7 +326,7 @@
 
         <section>
           <section>
-            <h2>for the Pictures</h2>
+            <h2>for the pictures</h2>
 
             <aside class="notes">
               Where it's about the graph itself
@@ -354,7 +351,7 @@
 
         <section>
           <section>
-            <h2>for Other Humans</h2>
+            <h2>for other reasons</h2>
 
             <aside class="notes">
               Where the graph is purposefully misleading
@@ -504,7 +501,7 @@
 
         </section>
 
-        <section>
+        <!-- <section>
           <section><img src="images/fitbit.png" /></section>
           <section><img src="images/finder-fitbit-csv.png" /></section>
           <section>
@@ -518,7 +515,7 @@
           <section>
             <h1>"Body Type": null</h1>
           </section>
-        </section>
+        </section> -->
 
         <!-- <section>
           <section>
@@ -539,20 +536,29 @@
         </section> -->
 
         <section>
-          <h1>csv</h1>
+          <div class="left">
+            <h2>As a runner,</h2>
+            <h2>I want my data as a CSV file,</h2>
+            <h2>So that I can explore it</h2>
+          </div>
         </section>
 
         <section>
           <section>
             <h1>Approach 1.</h1>
-            <h2 class="fragment">Use runkeeper.com</h2>
+            <h2 class="fragment">Go to runkeeper.com</h2>
           </section>
           <section><img src="images/runkeeper-export.png" /></section>
           <section><img src="images/finder-runkeeper-export.png" /></section>
-          <section>
-            <ul class="points">
-              <!-- <li class="positive">Any user can get their data</li> -->
-              <li class="negative">No format options</li>
+          <section class="good-bad">
+            <h3>👌</h3>
+            <ul>
+              <li class="fragment">We're done!</li>
+            </ul>
+
+            <h3 class="fragment">❌</h3>
+            <ul>
+              <li class="fragment">No format options</li>
             </ul>
           </section>
         </section>
@@ -563,10 +569,15 @@
             <h2 class="fragment">Write a script</h2>
           </section>
           <section><img src="images/runkeeper-export-script.png" /></section>
-          <section>
-            <ul class="points">
-              <li class="positive">Any format we want</li>
-              <li class="negative">Requires coding knowledge</li>
+          <section class="good-bad">
+            <h3>👌</h3>
+            <ul>
+              <li class="fragment">Any format we want</li>
+            </ul>
+
+            <h3 class="fragment">❌</h3>
+            <ul>
+              <li class="fragment">Inaccessible</li>
             </ul>
           </section>
         </section>
@@ -588,29 +599,43 @@
             api &larr; web server &larr; browser
           </h2></section>
 
-          <section>
-            <ul class="points">
-              <li class="positive">No coding necessary</li>
-              <li class="negative">Complex backend &amp; privacy issues</li>
+          <section class="good-bad">
+            <h3>👌</h3>
+            <ul>
+              <li class="fragment">Accessible</li>
+            </ul>
+
+            <h3 class="fragment">❌</h3>
+            <ul>
+              <li class="fragment">Complex backend</li>
+              <li class="fragment">privacy issues</li>
             </ul>
           </section>
+
         </section>
 
         <section>
           <section>
             <h1> </h1>
             <h1>Approach 4.</h1>
-            <h2 class="fragment">More browser</h2>
-            <h1 class="fragment">🚀🌟🐎🐠✅</h1>
+            <h2 class="fragment">Use the browser</h2>
           </section>
 
+
           <section>
+            <img src="images/rk-data-1.png" class="stretch" />
+          </section>
+          <section>
+            <img src="images/rk-data-2.png" class="stretch" />
+          </section>
+
+          <!-- <section>
             <img src="images/app-login.png" class="stretch" />
           </section>
 
           <section>
             <img src="images/app-sw.png" class="stretch" />
-          </section>
+          </section> -->
 
 
           <section><h2 class="bang-fragments" style="font-size:90%">
@@ -630,12 +655,18 @@ fetch('http://api.runkeeper.com/activities?token=TOKEN')
             </code></pre>
           </section>
 
-          <section>
-            <ul class="points">
-              <li class="positive">Data only stored by user</li>
-              <li class="positive">Simple backend</li>
-              <li class="positive">Instant Access</li>
-              <li class="negative">CSV file</li>
+
+          <section class="good-bad">
+            <h3>👌</h3>
+            <ul>
+              <li class="fragment">Data only stored by user</li>
+              <li class="fragment">Simple backend</li>
+              <li class="fragment">Instant Access</li>
+            </ul>
+
+            <h3 class="fragment">❌</h3>
+            <ul>
+              <li class="fragment">CSV file</li>
             </ul>
           </section>
 
@@ -653,7 +684,7 @@ fetch('http://api.runkeeper.com/activities?token=TOKEN')
 
 if(event.request.url.match(/sw\/hello\.txt$/)){
   event.respondWith(
-    new Response( "Hello from your Service Worker", {
+    new Response( `Hello from your Service Worker! (at ${getTime()})`, {
       headers: { 'Content-Type': 'plain/text' }
     })
   )
@@ -679,6 +710,14 @@ if(event.request.url.match(/sw\/activities\.csv$/)){
 }
           </code></pre>
 
+        </section>
+
+        <section>
+          <img src="images/rk-data-3.png" class="stretch" />
+        </section>
+
+        <section>
+          <img src="images/rk-data-4.png" class="stretch" />
         </section>
 
         <section>
@@ -710,7 +749,7 @@ fetch('/sw/activities.json')
 
         <section>
           <section>
-            <h1><span class="heading-3">visualising data</span></h1>
+            <h1><span class="heading-3">Drawing data</span></h1>
             <!--
             ANGLE:
 
@@ -868,7 +907,7 @@ fetch('/sw/paths.binary')
 
         <section>
           <section>
-            <h1><span class="heading-4" style="font-size:85%">You and Your Data</span></h1>
+            <h1><span class="heading-4" style="font-size:85%">Being personal</span></h1>
           </section>
 
           <section>
@@ -908,12 +947,101 @@ fetch('/sw/paths.binary')
 
 
         <section>
+          <h1><span class="heading-4">/</span></h1>
+        </section>
+
+
+        <section>
+          <section>
+            <h2><span class="heading-5">Being generative</span></h2>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <img src="images/publishing-rooms-foxall.png" class="stretch"/>
+          </section>
+
+
+          <section data-background="images/PR-0.jpg"></section>
+          <section data-background="images/PR-1.jpg"></section>
+          <section data-background="images/PR-2.jpg"></section>
+          <section data-background="images/PR-6.jpg"></section>
+          <!-- <section data-background="images/PR-3.png" data-background-size="100%"></section>
+          <section data-background="images/PR-4.png" data-background-size="100%"></section> -->
+          <section data-background="images/PR-3+4.png"></section>
+          <!-- <section data-background="images/PR-5.jpg"></section> -->
+          <section data-background="images/PR-7.jpg" data-background-size="100%"></section>
+          <section data-background="images/PR-8.jpg"></section>
+          <section data-background="images/PR-8.jpg"></section>
+          <section data-background="images/PR-9.jpg"></section>
+
+        </section>
+
+        <section>
+
+          <section>
+            <h2>CSV</h2>
+          </section>
+
+          <section>
+            <img src="images/charting-tools.png" class="stretch" />
+          </section>
+
+          <section>
+            <img src="images/charting-tools-lisa.png" class="stretch" />
+          </section>
+
+
+          <section>
+            <h2>“If you make a system for drawing, you can change the parameters and create something entirely new”</h2>
+            <cite><small>– Mike, a couple of hours ago</small></cite>
+          </section>
+
+
+          <section>
+            <div class="left">
+              <h2>GET /path</h2>
+              <h2>GET /path.csv</h2>
+              <h2>GET /path.json</h2>
+            </div>
+          </section>
+
+          <section>
+            <img src="images/snazzy-chart.png" class="stretch"/>
+            <aside class="notes">
+              <!-- When you make a great graph,
+              it's even greater if you give other people the tools to do the same thing -->
+            </aside>
+          </section>
+
+        </section>
+
+
+        <section>
+          <section>
+            <h2><span class="heading-5">/</span></h2>
+          </section>
+        </section>
+
+
+        <section>
+          <h4>…</h4>
+          <div class="left">
+            <h3 class="fragment">Visualisation: Data &rarr; Pictures &rarr; Humans</h3>
+            <h3 class="fragment">Browsers &amp; Visualisation = 👌👌</h3>
+            <h3 class="fragment">Create things</h3>
+            <h3 class="fragment">Let other people create things</h3>
+          </div>
+        </section>
+<!--
+        <section>
             <section>
               <h2>So&hellip;</h2>
               <h1 class="fragment">Be open</h1>
               <h1 class="fragment">Be yourself</h1>
             </section>
-            <!--
+            <!- -
               TODO: Conclusion
 
               * Your data is nothing without you
@@ -923,18 +1051,28 @@ fetch('/sw/paths.binary')
               * Think about people
               * Think further than the chart
 
-            -->
+            - ->
+        </section> -->
+
+        <section>
+          <div class="left">
+            <h3><a href="http://publishingrooms.com/">publishingrooms.com</a></h3>
+            <h3><a href="https://runkeeper-data.herokuapp.com/">runkeeper-data.herokuapp.com</a></h3>
+            <h3><a href="https://blog.pusher.com/offline-and-realtime/">blog.pusher.com/offline-and-realtime</a></h3>
+          </div>
         </section>
 
 
         <section>
             <section>
               <h1>Thanks</h1>
-              <h2 style="text-transform:none">@benjaminbenben</h2>
+              <h2>@benjaminbenben</h2>
               <div class="badges">
-                <img src="images/wo-1.png"          />
+                <img src="images/pusher_logo_p_dark.svg"/>
+                <!-- <img src="images/wo-1.png"          /> -->
+
+                <img src="images/soh.svg"      />
                 <img src="images/jsoxford-new.png"      />
-                <!-- <img src="img/soh-logo.svg"      /> -->
                 <!-- <img src="img/jq-sm.png"         /> -->
                 <!-- <img src="img/adventure-club.png"/> -->
                 <!-- <img src="img/do.png"/> -->
@@ -952,6 +1090,7 @@ fetch('/sw/paths.binary')
 
             -->
         </section>
+
 
 
       </div>
