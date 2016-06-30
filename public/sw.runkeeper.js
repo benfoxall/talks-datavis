@@ -62,11 +62,17 @@ self.addEventListener('install', function(event) {
   );
 });
 
+function getTime() {
+  var d = new Date();
+  // if only there was a way to padd these in from the left
+  return [ d.getHours(),  d.getMinutes(), d.getSeconds() ].join(':')
+}
+
 self.addEventListener('fetch', function(event) {
 
     if(event.request.url.match(/sw\/hello\.txt$/)){
       event.respondWith(
-        new Response( "Hello from your Service Worker", {
+        new Response( `Hello from your Service Worker! (at ${getTime()})`, {
           headers: { 'Content-Type': 'text/plain' }
         })
       )
