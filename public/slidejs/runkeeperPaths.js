@@ -97,8 +97,8 @@
 
 
 
-      var dur = 3000,//3000
-          tt = 20;//20
+      var dur = 1000,//3000
+          tt = 10;//20
 
       var slide = new DynamicSlide(el);
       slide.addEventListener('shown', function(){
@@ -281,7 +281,7 @@
             })
         }
       }).filter(function(d, i){
-        if(i === 0 || i === 9) return true
+        if(i === 0) return true;// || i === 9) return true
       })
       // .concat([
       //   function(){
